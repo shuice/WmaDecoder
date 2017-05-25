@@ -408,9 +408,9 @@ static int asf_read_header(AVFormatContext *s, AVFormatParameters *ap)
         get_guid(pb, &g);
         gsize = get_le64(pb);
 #ifdef DEBUG
-        printf("%08Lx: ", url_ftell(pb) - 24);
+        printf("%08llx: ", url_ftell(pb) - 24);
         print_guid(&g);
-        printf("  size=0x%Lx\n", gsize);
+        printf("  size=0x%llx\n", gsize);
 #endif
         if (gsize < 24)
             goto fail;
@@ -889,7 +889,7 @@ static int asf_read_packet(AVFormatContext *s, AVPacket *pkt)
 			offset += asf_st->ds_chunk_size;
 		    }
 		    av_free(asf_st->pkt.data);
-		    asf_st->pkt.data = newdata;
+		    asf_st->pkt.data = (uint8_t *)newdata;
 		}
 	    }
 	    asf_st->frag_offset = 0;

@@ -516,16 +516,8 @@ void ff_fft_calc_altivec(FFTContext *s, FFTComplex *z);
 ///added by yuanbin
 void fft_calc_c(struct FFTContext *s,  FFTComplex *z);
 
-static void fft_calc(FFTContext *s, FFTComplex *z)
-{
-    s->fft_calc(s, z);
-}
 
-//static inline void ff_fft_calc(FFTContext *s, FFTComplex *z)
-static void ff_fft_calc(FFTContext *s, FFTComplex *z)
-{
-    s->fft_calc(s, z);
-}
+
 void ff_fft_end(FFTContext *s);
 
 /* MDCT computation */

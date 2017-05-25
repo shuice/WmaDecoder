@@ -2246,7 +2246,7 @@ AVImageFormat *guess_image_format(const char *filename)
 
 /**
  * Read an image from a stream. 
- * @param gb byte stream containing the image
+ * @param pb byte stream containing the image
  * @param fmt image format, NULL if probing is required
  */
 int av_read_image(ByteIOContext *pb, const char *filename,

@@ -11,23 +11,14 @@
 #    define CONFIG_WIN32
 #endif
 
-//#define ALT_BITSTREAM_WRITER
-//#define ALIGNED_BITSTREAM_WRITER
-
 #define ALT_BITSTREAM_READER
-//#define LIBMPEG2_BITSTREAM_READER
-//#define A32_BITSTREAM_READER
 #define LIBMPEG2_BITSTREAM_READER_HACK //add BERO
 
-#ifndef M_PI
-#define M_PI    3.14159265358979323846
-#endif
 
 #define HAVE_AV_CONFIG_H
 
 #ifdef HAVE_AV_CONFIG_H
 /* only include the following when compiling package */
-#    include "config.h"
 
 #    include <stdlib.h>
 #    include <stdio.h>
@@ -338,7 +329,7 @@ static inline int put_bits_count(PutBitContext *s)
 #ifdef ALT_BITSTREAM_WRITER
     return s->index;
 #else
-    return (s->buf_ptr - s->buf) * 8 + 32 - s->bit_left;
+    return (int)(s->buf_ptr - s->buf) * 8 + 32 - s->bit_left;
 #endif
 }
 

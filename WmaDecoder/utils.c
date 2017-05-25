@@ -390,17 +390,6 @@ AVCodec *avcodec_find_decoder_by_name(const char *name)
     }
     return NULL;
 }
-static AVCodec *avcodec_find(enum CodecID id)
-{
-    AVCodec *p;
-    p = first_avcodec;
-    while (p) {
-        if (p->id == id)
-            return p;
-        p = p->next;
-    }
-    return NULL;
-}
 
 unsigned avcodec_version( void )
 {

@@ -2086,7 +2086,7 @@ typedef enum {
  *                for initialization pass NULL - will be returned pout
  *                user is supposed to know nothing about its structure
  * \param cmd     type of operation to be performed
- * \param pint    input parameter
+ * \param pin   input parameter
  * \param pout    output parameter
  *
  * \returns  command status - eventually for query command it might return
