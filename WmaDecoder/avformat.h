@@ -558,10 +558,6 @@ int av_write_frame(AVFormatContext *s, int stream_index, const uint8_t *buf,
                    int size);
 int av_write_trailer(AVFormatContext *s);
 
-void dump_format(AVFormatContext *ic,
-                 int index, 
-                 const char *url,
-                 int is_output);
 int parse_image_size(int *width_ptr, int *height_ptr, const char *str);
 int parse_frame_rate(int *frame_rate, int *frame_rate_base, const char *arg);
 int64_t parse_date(const char *datestr, int duration);

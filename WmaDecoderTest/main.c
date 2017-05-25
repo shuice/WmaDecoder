@@ -23,8 +23,17 @@ static int rewrite_header(FILE *out, unsigned int written);
 
 int main(int argc,char ** argv)
 {
-    char filename[256]={"input.wma"};
-    char filenameout[256]={"output.wav"};
+    char folderPath[1024] = {0};
+    strncpy(folderPath, argv[0], sizeof(folderPath) -1);
+    *(strrchr(folderPath, '/') + 1) = '\0';
+    
+    char inputFilename[1024] = {0};
+    char outputFilename[1024] = {0};
+    strncpy(inputFilename, folderPath, sizeof(inputFilename) -1);
+    strncat(inputFilename, "input.wma", sizeof(inputFilename) -1);
+    
+    strncpy(outputFilename, folderPath, sizeof(inputFilename) -1);
+    strncat(outputFilename, "output.wav", sizeof(inputFilename) -1);
 
     
     AVCodec *codec = NULL;			  // Codec
@@ -43,9 +52,9 @@ int main(int argc,char ** argv)
     avcodec_register_all();
     av_register_all();
     
-    if(av_open_input_file(&ic, filename, NULL, 0, NULL) < 0)
+    if(av_open_input_file(&ic, inputFilename, NULL, 0, NULL) < 0)
     {
-        printf("Error: could not open file %s\n", filename);
+        printf("Error: could not open file %s\n", inputFilename);
         exit(1);
     }
     
@@ -73,7 +82,7 @@ int main(int argc,char ** argv)
         exit(1);
     }
     
-    outfile = fopen(filenameout, "wb");
+    outfile = fopen(outputFilename, "wb");
     if (!outfile) {
         fprintf(stderr, "Error: not open to write output file\n");
         exit(1);

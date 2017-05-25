@@ -39,10 +39,7 @@ static inline int av_cmp_q(AVRational a, AVRational b){
     else if(tmp == 0) return  0;
     else              return  1;
 }
-//static inline double av_q2d(AVRational a){
-static double av_q2d(AVRational a){
-    return a.num / (double) a.den;
-}
+
 
 AVRational av_mul_q(AVRational b, AVRational c);
 AVRational av_div_q(AVRational b, AVRational c);

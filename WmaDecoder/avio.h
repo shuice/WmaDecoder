@@ -151,7 +151,6 @@ int url_close_dyn_buf(ByteIOContext *s, uint8_t **pbuffer);
 
 /* file.c */
 extern URLProtocol file_protocol;
-extern URLProtocol pipe_protocol;
 
 /* udp.c */
 extern URLProtocol udp_protocol;

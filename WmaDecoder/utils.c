@@ -26,8 +26,6 @@
  
 #include "avcodec.h"
 #include "dsputil.h"
-#include "mpegvideo.h"
-//#include "integer.h"	//Del by ty
 #include <stdarg.h>
 #include <limits.h>
 
@@ -65,32 +63,8 @@ void *av_fast_realloc(void *ptr, unsigned int *size, unsigned int min_size)
     *size= 17*min_size/16 + 32;
     return av_realloc(ptr, *size);
 }
-//static unsigned int last_static = 0;
-//static unsigned int allocated_static = 0;
-//static void** array_static = NULL;
-///**
-// * allocation of static arrays - do not use for normal allocation.
-// */
-//void *av_mallocz_static(unsigned int size)
-//{
-//    void *ptr = av_mallocz(size);
-//    if(ptr){ 
-//        array_static =av_fast_realloc(array_static, &allocated_static, sizeof(void*)*(last_static+1));
-//        array_static[last_static++] = ptr;
-//    }
-//    return ptr;
-//}
-///**
-// * free all static arrays and reset pointers to 0.
-// */
-//void av_free_static(void)
-//{
-//    while(last_static){
-//        av_freep(&array_static[--last_static]);
-//    }
-//    av_freep(&array_static);
-//}
-/**
+
+/*
  * Frees memory and sets the pointer to NULL.
  * @param arg pointer to the pointer which should be freed
  */
@@ -162,93 +136,8 @@ void avcodec_align_dimensions(AVCodecContext *s, int *width, int *height){
     *width = ALIGN(*width , w_align);
     *height= ALIGN(*height, h_align);
 }
-int avcodec_default_get_buffer(AVCodecContext *s, AVFrame *pic){
-    int i;
-    int w= s->width;
-    int h= s->height;
-    InternalBuffer *buf;
-    int *picture_number;
-    
-    assert(pic->data[0]==NULL);
-    assert(INTERNAL_BUFFER_SIZE > s->internal_buffer_count);
-    if(s->internal_buffer==NULL){
-        s->internal_buffer= av_mallocz(INTERNAL_BUFFER_SIZE*sizeof(InternalBuffer));
-    }
-#if 0
-    s->internal_buffer= av_fast_realloc(
-        s->internal_buffer, 
-        &s->internal_buffer_size, 
-        sizeof(InternalBuffer)*FFMAX(99,  s->internal_buffer_count+1)/*FIXME*/
-        );
-#endif
-     
-    buf= &((InternalBuffer*)s->internal_buffer)[s->internal_buffer_count];
-    picture_number= &(((InternalBuffer*)s->internal_buffer)[INTERNAL_BUFFER_SIZE-1]).last_pic_num; //FIXME ugly hack
-    (*picture_number)++;
-    
-    if(buf->base[0]){
-        pic->age= *picture_number - buf->last_pic_num;
-        buf->last_pic_num= *picture_number;
-    }else{
-        int h_chroma_shift, v_chroma_shift;
-        int s_align, pixel_size;
-        
-        avcodec_get_chroma_sub_sample(s->pix_fmt, &h_chroma_shift, &v_chroma_shift);
-        
-        switch(s->pix_fmt){
-        case PIX_FMT_RGB555:
-        case PIX_FMT_RGB565:
-        case PIX_FMT_YUV422:
-            pixel_size=2;
-            break;
-        case PIX_FMT_RGB24:
-        case PIX_FMT_BGR24:
-            pixel_size=3;
-            break;
-        case PIX_FMT_RGBA32:
-            pixel_size=4;
-            break;
-        default:
-            pixel_size=1;
-        }
-        avcodec_align_dimensions(s, &w, &h);
-#if defined(ARCH_POWERPC) || defined(HAVE_MMI) //FIXME some cleaner check
-        s_align= 16;
-#else
-        s_align= 8;
-#endif
-            
-        if(!(s->flags&CODEC_FLAG_EMU_EDGE)){
-            w+= EDGE_WIDTH*2;
-            h+= EDGE_WIDTH*2;
-        }
-        
-        buf->last_pic_num= -256*256*256*64;
-        for(i=0; i<3; i++){
-            const int h_shift= i==0 ? 0 : h_chroma_shift;
-            const int v_shift= i==0 ? 0 : v_chroma_shift;
-            //FIXME next ensures that linesize= 2^x uvlinesize, thats needed because some MC code assumes it
-            buf->linesize[i]= ALIGN(pixel_size*w>>h_shift, s_align<<(h_chroma_shift-h_shift)); 
-            buf->base[i]= av_mallocz((buf->linesize[i]*h>>v_shift)+16); //FIXME 16
-            if(buf->base[i]==NULL) return -1;
-            memset(buf->base[i], 128, buf->linesize[i]*h>>v_shift);
-        
-            if(s->flags&CODEC_FLAG_EMU_EDGE)
-                buf->data[i] = buf->base[i];
-            else
-                buf->data[i] = buf->base[i] + ALIGN((buf->linesize[i]*EDGE_WIDTH>>v_shift) + (EDGE_WIDTH>>h_shift), s_align);
-        }
-        pic->age= 256*256*256*64;
-    }
-    pic->type= FF_BUFFER_TYPE_INTERNAL;
-    for(i=0; i<4; i++){
-        pic->base[i]= buf->base[i];
-        pic->data[i]= buf->data[i];
-        pic->linesize[i]= buf->linesize[i];
-    }
-    s->internal_buffer_count++;
-    return 0;
-}
+
+
 void avcodec_default_release_buffer(AVCodecContext *s, AVFrame *pic){
     int i;
     InternalBuffer *buf, *last, temp;
@@ -272,34 +161,7 @@ void avcodec_default_release_buffer(AVCodecContext *s, AVFrame *pic){
     }
 //printf("R%X\n", pic->opaque);
 }
-int avcodec_default_reget_buffer(AVCodecContext *s, AVFrame *pic){
-    AVFrame temp_pic;
-    int i;
-    /* If no picture return a new buffer */
-    if(pic->data[0] == NULL) {
-        /* We will copy from buffer, so must be readable */
-        pic->buffer_hints |= FF_BUFFER_HINTS_READABLE;
-        return s->get_buffer(s, pic);
-    }
-    /* If internal buffer type return the same buffer */
-    if(pic->type == FF_BUFFER_TYPE_INTERNAL)
-        return 0;
-    /*
-     * Not internal type and reget_buffer not overridden, emulate cr buffer
-     */
-    temp_pic = *pic;
-    for(i = 0; i < 4; i++)
-        pic->data[i] = pic->base[i] = NULL;
-    pic->opaque = NULL;
-    /* Allocate new frame */
-    if (s->get_buffer(s, pic))
-        return -1;
-    /* Copy image data from old buffer to new buffer */
-    img_copy((AVPicture*)pic, (AVPicture*)&temp_pic, s->pix_fmt, s->width,
-             s->height);
-    s->release_buffer(s, &temp_pic); // Release old frame
-    return 0;
-}
+
 int avcodec_default_execute(AVCodecContext *c, int (*func)(AVCodecContext *c2, void *arg2),void **arg, int *ret, int count){
     int i;
     for(i=0; i<count; i++){
@@ -342,7 +204,7 @@ void avcodec_get_context_defaults(AVCodecContext *s){
     s->frame_rate = 25;
     s->gop_size= 50;
     s->me_method= ME_EPZS;
-    s->get_buffer= avcodec_default_get_buffer;
+    s->get_buffer= NULL;
     s->release_buffer= avcodec_default_release_buffer;
     s->get_format= avcodec_default_get_format;
     s->execute= avcodec_default_execute;
@@ -360,7 +222,7 @@ void avcodec_get_context_defaults(AVCodecContext *s){
     s->intra_quant_bias= FF_DEFAULT_QUANT_BIAS;
     s->inter_quant_bias= FF_DEFAULT_QUANT_BIAS;
     s->palctrl = NULL;
-    s->reget_buffer= avcodec_default_reget_buffer;
+    s->reget_buffer= NULL;
 }
 /**
  * allocates a AVCodecContext and set it to defaults.
@@ -539,130 +401,7 @@ static AVCodec *avcodec_find(enum CodecID id)
     }
     return NULL;
 }
-void avcodec_string(char *buf, int buf_size, AVCodecContext *enc, int encode)
-{
-    const char *codec_name;
-    AVCodec *p;
-    char buf1[32];
-    char channels_str[100];
-    int bitrate;
-    if (encode)
-        p = avcodec_find_encoder(enc->codec_id);
-    else
-        p = avcodec_find_decoder(enc->codec_id);
-    if (p) {
-        codec_name = p->name;
-        if (!encode && enc->codec_id == CODEC_ID_MP3) {
-            if (enc->sub_id == 2)
-                codec_name = "mp2";
-            else if (enc->sub_id == 1)
-                codec_name = "mp1";
-        }
-    } else if (enc->codec_id == CODEC_ID_MPEG2TS) {
-        /* fake mpeg2 transport stream codec (currently not
-           registered) */
-        codec_name = "mpeg2ts";
-    } else if (enc->codec_name[0] != '\0') {
-        codec_name = enc->codec_name;
-    } else {
-        /* output avi tags */
-        if (enc->codec_type == CODEC_TYPE_VIDEO) {
-            snprintf(buf1, sizeof(buf1), "%c%c%c%c", 
-                     enc->codec_tag & 0xff,
-                     (enc->codec_tag >> 8) & 0xff,
-                     (enc->codec_tag >> 16) & 0xff,
-                     (enc->codec_tag >> 24) & 0xff);
-        } else {
-            snprintf(buf1, sizeof(buf1), "0x%04x", enc->codec_tag);
-        }
-        codec_name = buf1;
-    }
-    switch(enc->codec_type) {
-    case CODEC_TYPE_VIDEO:
-        snprintf(buf, buf_size,
-                 "Video: %s%s",
-                 codec_name, enc->mb_decision ? " (hq)" : "");
-        if (enc->codec_id == CODEC_ID_RAWVIDEO) {
-            snprintf(buf + strlen(buf), buf_size - strlen(buf),
-                     ", %s",
-                     avcodec_get_pix_fmt_name(enc->pix_fmt));
-        }
-        if (enc->width) {
-            snprintf(buf + strlen(buf), buf_size - strlen(buf),
-                     ", %dx%d, %0.2f fps",
-                     enc->width, enc->height, 
-                     (float)enc->frame_rate / enc->frame_rate_base);
-        }
-        if (encode) {
-            snprintf(buf + strlen(buf), buf_size - strlen(buf),
-                     ", q=%d-%d", enc->qmin, enc->qmax);
-        }
-        bitrate = enc->bit_rate;
-        break;
-    case CODEC_TYPE_AUDIO:
-        snprintf(buf, buf_size,
-                 "Audio: %s",
-                 codec_name);
-        switch (enc->channels) {
-            case 1:
-                strcpy(channels_str, "mono");
-                break;
-            case 2:
-                strcpy(channels_str, "stereo");
-                break;
-            case 6:
-                strcpy(channels_str, "5:1");
-                break;
-            default:
-                sprintf(channels_str, "%d channels", enc->channels);
-                break;
-        }
-        if (enc->sample_rate) {
-            snprintf(buf + strlen(buf), buf_size - strlen(buf),
-                     ", %d Hz, %s",
-                     enc->sample_rate,
-                     channels_str);
-        }
-        
-        /* for PCM codecs, compute bitrate directly */
-        switch(enc->codec_id) {
-        case CODEC_ID_PCM_S16LE:
-        case CODEC_ID_PCM_S16BE:
-        case CODEC_ID_PCM_U16LE:
-        case CODEC_ID_PCM_U16BE:
-            bitrate = enc->sample_rate * enc->channels * 16;
-            break;
-        case CODEC_ID_PCM_S8:
-        case CODEC_ID_PCM_U8:
-        case CODEC_ID_PCM_ALAW:
-        case CODEC_ID_PCM_MULAW:
-            bitrate = enc->sample_rate * enc->channels * 8;
-            break;
-        default:
-            bitrate = enc->bit_rate;
-            break;
-        }
-        break;
-    case CODEC_TYPE_DATA:
-        snprintf(buf, buf_size, "Data: %s", codec_name);
-        bitrate = enc->bit_rate;
-        break;
-    default:
-        av_abort();
-    }
-    if (encode) {
-        if (enc->flags & CODEC_FLAG_PASS1)
-            snprintf(buf + strlen(buf), buf_size - strlen(buf),
-                     ", pass 1");
-        if (enc->flags & CODEC_FLAG_PASS2)
-            snprintf(buf + strlen(buf), buf_size - strlen(buf),
-                     ", pass 2");
-    }
-    if (bitrate != 0) {
-        snprintf(buf + strlen(buf), buf_size - strlen(buf), 
-                 ", %d kb/s", bitrate / 1000);
-    }
-}
+
 unsigned avcodec_version( void )
 {
   return LIBAVCODEC_VERSION_INT;
@@ -676,7 +415,9 @@ void avcodec_init(void)
 {
     static int inited = 0;
     if (inited != 0)
-	return;
+    {
+        return;
+    }
     inited = 1;
     dsputil_static_init();
 }
@@ -703,61 +444,8 @@ static void avcodec_default_free_buffers(AVCodecContext *s){
     
     s->internal_buffer_count=0;
 }
-char av_get_pict_type_char(int pict_type){
-    switch(pict_type){
-    case I_TYPE: return 'I'; 
-    case P_TYPE: return 'P'; 
-    case B_TYPE: return 'B'; 
-    case S_TYPE: return 'S'; 
-    case SI_TYPE:return 'i'; 
-    case SP_TYPE:return 'p'; 
-    default:     return '?';
-    }
-}
-int av_reduce(int *dst_nom, int *dst_den, int64_t nom, int64_t den, int64_t max){
-    int exact=1, sign=0;
-    int64_t gcd;
-    assert(den != 0);
-    if(den < 0)
-        return av_reduce(dst_nom, dst_den, -nom, -den, max);
-    
-    sign= nom < 0;
-    nom= ABS(nom);
-    
-    gcd = ff_gcd(nom, den);
-    nom /= gcd;
-    den /= gcd;
-    
-    if(nom > max || den > max){
-        AVRational a0={0,1}, a1={1,0};
-        exact=0;
-        for(;;){
-            int64_t x= nom / den;
-            int64_t a2n= x*a1.num + a0.num;
-            int64_t a2d= x*a1.den + a0.den;
-            if(a2n > max || a2d > max) break;
-            nom %= den;
-        
-            a0= a1;
-//CS by tiany
-//            a1= (AVRational){a2n, a2d};
-            a1.num = a2n;
-            a1.den = a2d;
-//CE by tiany
-            if(nom==0) break;
-            x= nom; nom=den; den=x;
-        }
-        nom= a1.num;
-        den= a1.den;
-    }
-    
-    assert(ff_gcd(nom, den) == 1);
-    
-    *dst_nom = sign ? -nom : nom;
-    *dst_den = den;
-    
-    return exact;
-}
+
+
 //int64_t av_rescale(int64_t a, int64_t b, int64_t c){
 //    AVInteger ai, ci;
 //    assert(c > 0);

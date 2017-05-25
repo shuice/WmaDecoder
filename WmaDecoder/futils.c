@@ -1723,61 +1723,6 @@ int av_write_trailer(AVFormatContext *s)
     return ret;
 }
 
-/* "user interface" functions */
-
-void dump_format(AVFormatContext *ic,
-                 int index, 
-                 const char *url,
-                 int is_output)
-{
-    int i, flags;
-    char buf[256];
-
-    fprintf(stderr, "%s #%d, %s, %s '%s':\n", 
-            is_output ? "Output" : "Input",
-            index, 
-            is_output ? ic->oformat->name : ic->iformat->name, 
-            is_output ? "to" : "from", url);
-    if (!is_output) {
-        fprintf(stderr, "  Duration: ");
-        if (ic->duration != AV_NOPTS_VALUE) {
-            int hours, mins, secs, us;
-            secs = ic->duration / AV_TIME_BASE;
-            us = ic->duration % AV_TIME_BASE;
-            mins = secs / 60;
-            secs %= 60;
-            hours = mins / 60;
-            mins %= 60;
-            fprintf(stderr, "%02d:%02d:%02d.%01d", hours, mins, secs, 
-                   (10 * us) / AV_TIME_BASE);
-        } else {
-            fprintf(stderr, "N/A");
-        }
-        fprintf(stderr, ", bitrate: ");
-        if (ic->bit_rate) {
-            fprintf(stderr,"%d kb/s", ic->bit_rate / 1000);
-        } else {
-            fprintf(stderr, "N/A");
-        }
-        fprintf(stderr, "\n");
-    }
-    for(i=0;i<ic->nb_streams;i++) {
-        AVStream *st = ic->streams[i];
-        avcodec_string(buf, sizeof(buf), &st->codec, is_output);
-        fprintf(stderr, "  Stream #%d.%d", index, i);
-        /* the pid is an important information, so we display it */
-        /* XXX: add a generic system */
-        if (is_output)
-            flags = ic->oformat->flags;
-        else
-            flags = ic->iformat->flags;
-        if (flags & AVFMT_SHOW_IDS) {
-            fprintf(stderr, "[0x%x]", st->id);
-        }
-        fprintf(stderr, ": %s\n", buf);
-    }
-}
-
 typedef struct {
     const char *abv;
     int width, height;

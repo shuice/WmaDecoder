@@ -330,7 +330,6 @@ typedef struct DSPContext {
 } DSPContext;
 
 void dsputil_static_init(void);
-void dsputil_init(DSPContext* p, AVCodecContext *avctx);
 
 /**
  * permute block according to permuatation.
@@ -547,25 +546,7 @@ void ff_mdct_calc(MDCTContext *s, FFTSample *out,
                const FFTSample *input, FFTSample *tmp);
 void ff_mdct_end(MDCTContext *s);
 
-#define WARPER8_16(name8, name16)\
-static int name16(void /*MpegEncContext*/ *s, uint8_t *dst, uint8_t *src, int stride, int h){\
-    return name8(s, dst           , src           , stride, h)\
-          +name8(s, dst+8         , src+8         , stride, h);\
-}
 
-#define WARPER8_16_SQ(name8, name16)\
-static int name16(void /*MpegEncContext*/ *s, uint8_t *dst, uint8_t *src, int stride, int h){\
-    int score=0;\
-    score +=name8(s, dst           , src           , stride, 8);\
-    score +=name8(s, dst+8         , src+8         , stride, 8);\
-    if(h==16){\
-        dst += 8*stride;\
-        src += 8*stride;\
-        score +=name8(s, dst           , src           , stride, 8);\
-        score +=name8(s, dst+8         , src+8         , stride, 8);\
-    }\
-    return score;\
-}
 
 #ifndef HAVE_LRINTF
 /* XXX: add ISOC specific test to avoid specific BSD testing. */
