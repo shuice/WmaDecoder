@@ -428,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/Build";
+				CONFIGURATION_TEMP_DIR = "$(SRCROOT)/Build/Temp";
 				DEVELOPMENT_TEAM = BTYMLC65YS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -439,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/Build";
+				CONFIGURATION_TEMP_DIR = "$(SRCROOT)/Build/Temp";
 				DEVELOPMENT_TEAM = BTYMLC65YS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -451,6 +453,7 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/Build";
+				CONFIGURATION_TEMP_DIR = "$(SRCROOT)/Build/Temp";
 				DEVELOPMENT_TEAM = BTYMLC65YS;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				OTHER_LDFLAGS = "-ObjC";
@@ -466,6 +469,7 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/Build";
+				CONFIGURATION_TEMP_DIR = "$(SRCROOT)/Build/Temp";
 				DEVELOPMENT_TEAM = BTYMLC65YS;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				OTHER_LDFLAGS = "-ObjC";
@@ -496,6 +500,7 @@
 				990EE1CD1ED7127200F1FB23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		990EE1E01ED7190F00F1FB23 /* Build configuration list for PBXNativeTarget "WmaDecoder" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +509,7 @@
 				990EE1E21ED7190F00F1FB23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
