@@ -145,6 +145,9 @@ static void help(char *aa)
 #define COUNT 8000
 #define SIZE (COUNT*40)
 int main(int argc,char ** argv){
+    char filename[256]={"input.wma"};
+    char filenameout[256]={"output.wav"};
+
     
     //AS by tiany for test on 20060331
     FILE * inpf;
@@ -168,12 +171,8 @@ int main(int argc,char ** argv){
     FILE *outfile = NULL;
     char tmp[24];
     unsigned int written = 0;
-    char filename[256]={""};
-    char filenameout[256]={"test.wav"};
     int no_info = 1; //default
-    
-    if(argc == 1) 	help(argv[0]);
-    strcpy(filename,argv[1]);
+
     
     avcodec_init();
     avcodec_register_all();
@@ -322,7 +321,7 @@ int main(int argc,char ** argv){
         avcodec_close(c);
     if(ic)
         av_close_input_file(ic);
-    return;
+    return 0;
 end:
     if(outfile)
         fclose(outfile);

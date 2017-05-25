@@ -7,62 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		990EE19D1ED710F500F1FB23 /* allcodecs.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1761ED710F500F1FB23 /* allcodecs.c */; };
-		990EE19E1ED710F500F1FB23 /* allformats.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1771ED710F500F1FB23 /* allformats.c */; };
-		990EE19F1ED710F500F1FB23 /* asf.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1781ED710F500F1FB23 /* asf.c */; };
-		990EE1A01ED710F500F1FB23 /* Audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1791ED710F500F1FB23 /* Audio.c */; };
-		990EE1A11ED710F500F1FB23 /* Audio.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE17A1ED710F500F1FB23 /* Audio.h */; };
-		990EE1A21ED710F500F1FB23 /* avcodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE17B1ED710F500F1FB23 /* avcodec.h */; };
-		990EE1A31ED710F500F1FB23 /* avformat.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE17C1ED710F500F1FB23 /* avformat.h */; };
-		990EE1A41ED710F500F1FB23 /* avi.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE17D1ED710F500F1FB23 /* avi.h */; };
-		990EE1A51ED710F500F1FB23 /* avio.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE17E1ED710F500F1FB23 /* avio.c */; };
-		990EE1A61ED710F500F1FB23 /* avio.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE17F1ED710F500F1FB23 /* avio.h */; };
-		990EE1A71ED710F500F1FB23 /* aviobuf.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1801ED710F500F1FB23 /* aviobuf.c */; };
-		990EE1A81ED710F500F1FB23 /* bswap.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE1811ED710F500F1FB23 /* bswap.h */; };
-		990EE1A91ED710F500F1FB23 /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1821ED710F500F1FB23 /* common.c */; };
-		990EE1AA1ED710F500F1FB23 /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE1831ED710F500F1FB23 /* common.h */; };
-		990EE1AB1ED710F500F1FB23 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE1841ED710F500F1FB23 /* config.h */; };
-		990EE1AC1ED710F500F1FB23 /* cutils.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1851ED710F500F1FB23 /* cutils.c */; };
-		990EE1AD1ED710F500F1FB23 /* dsputil.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1861ED710F500F1FB23 /* dsputil.c */; };
-		990EE1AE1ED710F500F1FB23 /* dsputil.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE1871ED710F500F1FB23 /* dsputil.h */; };
-		990EE1AF1ED710F500F1FB23 /* error_resilience.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1881ED710F500F1FB23 /* error_resilience.c */; };
-		990EE1B01ED710F500F1FB23 /* fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1891ED710F500F1FB23 /* fft.c */; };
-		990EE1B11ED710F500F1FB23 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18A1ED710F500F1FB23 /* file.c */; };
-		990EE1B21ED710F500F1FB23 /* futils.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18B1ED710F500F1FB23 /* futils.c */; };
-		990EE1B31ED710F500F1FB23 /* imgconvert.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18C1ED710F500F1FB23 /* imgconvert.c */; };
-		990EE1B41ED710F500F1FB23 /* jrevdct.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18D1ED710F500F1FB23 /* jrevdct.c */; };
-		990EE1B51ED710F500F1FB23 /* mdct.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18E1ED710F500F1FB23 /* mdct.c */; };
-		990EE1B61ED710F500F1FB23 /* mem.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18F1ED710F500F1FB23 /* mem.c */; };
-		990EE1B71ED710F500F1FB23 /* mpegvideo.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1901ED710F500F1FB23 /* mpegvideo.c */; };
-		990EE1B81ED710F500F1FB23 /* mpegvideo.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE1911ED710F500F1FB23 /* mpegvideo.h */; };
-		990EE1B91ED710F500F1FB23 /* os_support.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE1921ED710F500F1FB23 /* os_support.h */; };
-		990EE1BA1ED710F500F1FB23 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1931ED710F500F1FB23 /* parser.c */; };
-		990EE1BB1ED710F500F1FB23 /* rational.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE1941ED710F500F1FB23 /* rational.h */; };
-		990EE1BC1ED710F500F1FB23 /* simple_idct.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1951ED710F500F1FB23 /* simple_idct.c */; };
-		990EE1BD1ED710F500F1FB23 /* simple_idct.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE1961ED710F500F1FB23 /* simple_idct.h */; };
-		990EE1BE1ED710F500F1FB23 /* svq3.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1971ED710F500F1FB23 /* svq3.c */; };
-		990EE1BF1ED710F500F1FB23 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1981ED710F500F1FB23 /* utils.c */; };
-		990EE1C01ED710F500F1FB23 /* vp3data.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE1991ED710F500F1FB23 /* vp3data.h */; };
-		990EE1C11ED710F500F1FB23 /* vp3dsp.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE19A1ED710F500F1FB23 /* vp3dsp.c */; };
-		990EE1C21ED710F500F1FB23 /* wmadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 990EE19B1ED710F500F1FB23 /* wmadata.h */; };
-		990EE1C31ED710F500F1FB23 /* wmadec.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE19C1ED710F500F1FB23 /* wmadec.c */; };
 		990EE1CB1ED7127200F1FB23 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1CA1ED7127200F1FB23 /* main.c */; };
+		990EE1D51ED7183200F1FB23 /* input.wma in CopyFiles */ = {isa = PBXBuildFile; fileRef = 990EE1D21ED717D400F1FB23 /* input.wma */; };
+		990EE1E31ED7193E00F1FB23 /* allcodecs.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1761ED710F500F1FB23 /* allcodecs.c */; };
+		990EE1E41ED7193E00F1FB23 /* allformats.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1771ED710F500F1FB23 /* allformats.c */; };
+		990EE1E51ED7193E00F1FB23 /* asf.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1781ED710F500F1FB23 /* asf.c */; };
+		990EE1E61ED7193E00F1FB23 /* Audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1791ED710F500F1FB23 /* Audio.c */; };
+		990EE1E71ED7193E00F1FB23 /* avio.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE17E1ED710F500F1FB23 /* avio.c */; };
+		990EE1E81ED7193E00F1FB23 /* aviobuf.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1801ED710F500F1FB23 /* aviobuf.c */; };
+		990EE1E91ED7193E00F1FB23 /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1821ED710F500F1FB23 /* common.c */; };
+		990EE1EA1ED7193E00F1FB23 /* cutils.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1851ED710F500F1FB23 /* cutils.c */; };
+		990EE1EB1ED7193E00F1FB23 /* dsputil.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1861ED710F500F1FB23 /* dsputil.c */; };
+		990EE1EC1ED7193E00F1FB23 /* error_resilience.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1881ED710F500F1FB23 /* error_resilience.c */; };
+		990EE1ED1ED7193E00F1FB23 /* fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1891ED710F500F1FB23 /* fft.c */; };
+		990EE1EE1ED7193E00F1FB23 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18A1ED710F500F1FB23 /* file.c */; };
+		990EE1EF1ED7193E00F1FB23 /* futils.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18B1ED710F500F1FB23 /* futils.c */; };
+		990EE1F01ED7193E00F1FB23 /* imgconvert.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18C1ED710F500F1FB23 /* imgconvert.c */; };
+		990EE1F11ED7193E00F1FB23 /* jrevdct.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18D1ED710F500F1FB23 /* jrevdct.c */; };
+		990EE1F21ED7193E00F1FB23 /* mdct.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18E1ED710F500F1FB23 /* mdct.c */; };
+		990EE1F31ED7193E00F1FB23 /* mem.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18F1ED710F500F1FB23 /* mem.c */; };
+		990EE1F41ED7193E00F1FB23 /* mpegvideo.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1901ED710F500F1FB23 /* mpegvideo.c */; };
+		990EE1F51ED7193E00F1FB23 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1931ED710F500F1FB23 /* parser.c */; };
+		990EE1F61ED7193E00F1FB23 /* simple_idct.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1951ED710F500F1FB23 /* simple_idct.c */; };
+		990EE1F71ED7193E00F1FB23 /* svq3.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1971ED710F500F1FB23 /* svq3.c */; };
+		990EE1F81ED7193E00F1FB23 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1981ED710F500F1FB23 /* utils.c */; };
+		990EE1F91ED7193E00F1FB23 /* vp3dsp.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE19A1ED710F500F1FB23 /* vp3dsp.c */; };
+		990EE1FA1ED7193E00F1FB23 /* wmadec.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE19C1ED710F500F1FB23 /* wmadec.c */; };
+		990EE1FD1ED7196000F1FB23 /* libWmaDecoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 990EE1DA1ED7190E00F1FB23 /* libWmaDecoder.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		990EE1FB1ED7195B00F1FB23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 990EE1071ED6DB2E00F1FB23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 990EE1D91ED7190E00F1FB23;
+			remoteInfo = WmaDecoder;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		990EE1C61ED7127200F1FB23 /* CopyFiles */ = {
+		990EE1D41ED7182600F1FB23 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				990EE1D51ED7183200F1FB23 /* input.wma in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		990EE1D81ED7190E00F1FB23 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		990EE10F1ED6DB2E00F1FB23 /* libWmaDecoder.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libWmaDecoder.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		990EE1761ED710F500F1FB23 /* allcodecs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = allcodecs.c; path = WmaDecoder/allcodecs.c; sourceTree = SOURCE_ROOT; };
 		990EE1771ED710F500F1FB23 /* allformats.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = allformats.c; path = WmaDecoder/allformats.c; sourceTree = SOURCE_ROOT; };
 		990EE1781ED710F500F1FB23 /* asf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = asf.c; path = WmaDecoder/asf.c; sourceTree = SOURCE_ROOT; };
@@ -104,17 +110,20 @@
 		990EE19C1ED710F500F1FB23 /* wmadec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = wmadec.c; path = WmaDecoder/wmadec.c; sourceTree = SOURCE_ROOT; };
 		990EE1C81ED7127200F1FB23 /* WmaDecoderTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WmaDecoderTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		990EE1CA1ED7127200F1FB23 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		990EE1D21ED717D400F1FB23 /* input.wma */ = {isa = PBXFileReference; lastKnownFileType = file; path = input.wma; sourceTree = "<group>"; };
+		990EE1DA1ED7190E00F1FB23 /* libWmaDecoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWmaDecoder.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		990EE10C1ED6DB2E00F1FB23 /* Frameworks */ = {
+		990EE1C51ED7127200F1FB23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				990EE1FD1ED7196000F1FB23 /* libWmaDecoder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		990EE1C51ED7127200F1FB23 /* Frameworks */ = {
+		990EE1D71ED7190E00F1FB23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -136,8 +145,8 @@
 		990EE1101ED6DB2E00F1FB23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				990EE10F1ED6DB2E00F1FB23 /* libWmaDecoder.dylib */,
 				990EE1C81ED7127200F1FB23 /* WmaDecoderTest */,
+				990EE1DA1ED7190E00F1FB23 /* libWmaDecoder.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +201,7 @@
 		990EE1C91ED7127200F1FB23 /* WmaDecoderTest */ = {
 			isa = PBXGroup;
 			children = (
+				990EE1D21ED717D400F1FB23 /* input.wma */,
 				990EE1CA1ED7127200F1FB23 /* main.c */,
 			);
 			path = WmaDecoderTest;
@@ -199,65 +209,41 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		990EE10D1ED6DB2E00F1FB23 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				990EE1C01ED710F500F1FB23 /* vp3data.h in Headers */,
-				990EE1C21ED710F500F1FB23 /* wmadata.h in Headers */,
-				990EE1A81ED710F500F1FB23 /* bswap.h in Headers */,
-				990EE1BD1ED710F500F1FB23 /* simple_idct.h in Headers */,
-				990EE1B81ED710F500F1FB23 /* mpegvideo.h in Headers */,
-				990EE1B91ED710F500F1FB23 /* os_support.h in Headers */,
-				990EE1A61ED710F500F1FB23 /* avio.h in Headers */,
-				990EE1A21ED710F500F1FB23 /* avcodec.h in Headers */,
-				990EE1A31ED710F500F1FB23 /* avformat.h in Headers */,
-				990EE1BB1ED710F500F1FB23 /* rational.h in Headers */,
-				990EE1AB1ED710F500F1FB23 /* config.h in Headers */,
-				990EE1A11ED710F500F1FB23 /* Audio.h in Headers */,
-				990EE1AA1ED710F500F1FB23 /* common.h in Headers */,
-				990EE1AE1ED710F500F1FB23 /* dsputil.h in Headers */,
-				990EE1A41ED710F500F1FB23 /* avi.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		990EE10E1ED6DB2E00F1FB23 /* WmaDecoder */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 990EE1181ED6DB2E00F1FB23 /* Build configuration list for PBXNativeTarget "WmaDecoder" */;
-			buildPhases = (
-				990EE10B1ED6DB2E00F1FB23 /* Sources */,
-				990EE10C1ED6DB2E00F1FB23 /* Frameworks */,
-				990EE10D1ED6DB2E00F1FB23 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = WmaDecoder;
-			productName = WmaDecoder;
-			productReference = 990EE10F1ED6DB2E00F1FB23 /* libWmaDecoder.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
-		};
 		990EE1C71ED7127200F1FB23 /* WmaDecoderTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 990EE1CE1ED7127200F1FB23 /* Build configuration list for PBXNativeTarget "WmaDecoderTest" */;
 			buildPhases = (
 				990EE1C41ED7127200F1FB23 /* Sources */,
 				990EE1C51ED7127200F1FB23 /* Frameworks */,
-				990EE1C61ED7127200F1FB23 /* CopyFiles */,
+				990EE1D41ED7182600F1FB23 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				990EE1FC1ED7195B00F1FB23 /* PBXTargetDependency */,
 			);
 			name = WmaDecoderTest;
 			productName = WmaDecoderTest;
 			productReference = 990EE1C81ED7127200F1FB23 /* WmaDecoderTest */;
 			productType = "com.apple.product-type.tool";
+		};
+		990EE1D91ED7190E00F1FB23 /* WmaDecoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 990EE1E01ED7190F00F1FB23 /* Build configuration list for PBXNativeTarget "WmaDecoder" */;
+			buildPhases = (
+				990EE1D61ED7190E00F1FB23 /* Sources */,
+				990EE1D71ED7190E00F1FB23 /* Frameworks */,
+				990EE1D81ED7190E00F1FB23 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WmaDecoder;
+			productName = A;
+			productReference = 990EE1DA1ED7190E00F1FB23 /* libWmaDecoder.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -268,12 +254,12 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "c++";
 				TargetAttributes = {
-					990EE10E1ED6DB2E00F1FB23 = {
+					990EE1C71ED7127200F1FB23 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = BTYMLC65YS;
 						ProvisioningStyle = Automatic;
 					};
-					990EE1C71ED7127200F1FB23 = {
+					990EE1D91ED7190E00F1FB23 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = BTYMLC65YS;
 						ProvisioningStyle = Automatic;
@@ -292,44 +278,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				990EE10E1ED6DB2E00F1FB23 /* WmaDecoder */,
+				990EE1D91ED7190E00F1FB23 /* WmaDecoder */,
 				990EE1C71ED7127200F1FB23 /* WmaDecoderTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		990EE10B1ED6DB2E00F1FB23 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				990EE1B01ED710F500F1FB23 /* fft.c in Sources */,
-				990EE1A51ED710F500F1FB23 /* avio.c in Sources */,
-				990EE1AF1ED710F500F1FB23 /* error_resilience.c in Sources */,
-				990EE1B61ED710F500F1FB23 /* mem.c in Sources */,
-				990EE1A91ED710F500F1FB23 /* common.c in Sources */,
-				990EE19F1ED710F500F1FB23 /* asf.c in Sources */,
-				990EE1BA1ED710F500F1FB23 /* parser.c in Sources */,
-				990EE1BC1ED710F500F1FB23 /* simple_idct.c in Sources */,
-				990EE1B71ED710F500F1FB23 /* mpegvideo.c in Sources */,
-				990EE1BE1ED710F500F1FB23 /* svq3.c in Sources */,
-				990EE1C31ED710F500F1FB23 /* wmadec.c in Sources */,
-				990EE19E1ED710F500F1FB23 /* allformats.c in Sources */,
-				990EE1B21ED710F500F1FB23 /* futils.c in Sources */,
-				990EE1B31ED710F500F1FB23 /* imgconvert.c in Sources */,
-				990EE1A01ED710F500F1FB23 /* Audio.c in Sources */,
-				990EE1AC1ED710F500F1FB23 /* cutils.c in Sources */,
-				990EE1A71ED710F500F1FB23 /* aviobuf.c in Sources */,
-				990EE1AD1ED710F500F1FB23 /* dsputil.c in Sources */,
-				990EE1B41ED710F500F1FB23 /* jrevdct.c in Sources */,
-				990EE19D1ED710F500F1FB23 /* allcodecs.c in Sources */,
-				990EE1C11ED710F500F1FB23 /* vp3dsp.c in Sources */,
-				990EE1B11ED710F500F1FB23 /* file.c in Sources */,
-				990EE1B51ED710F500F1FB23 /* mdct.c in Sources */,
-				990EE1BF1ED710F500F1FB23 /* utils.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		990EE1C41ED7127200F1FB23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,7 +293,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		990EE1D61ED7190E00F1FB23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				990EE1E31ED7193E00F1FB23 /* allcodecs.c in Sources */,
+				990EE1E41ED7193E00F1FB23 /* allformats.c in Sources */,
+				990EE1E51ED7193E00F1FB23 /* asf.c in Sources */,
+				990EE1E61ED7193E00F1FB23 /* Audio.c in Sources */,
+				990EE1E71ED7193E00F1FB23 /* avio.c in Sources */,
+				990EE1E81ED7193E00F1FB23 /* aviobuf.c in Sources */,
+				990EE1E91ED7193E00F1FB23 /* common.c in Sources */,
+				990EE1EA1ED7193E00F1FB23 /* cutils.c in Sources */,
+				990EE1EB1ED7193E00F1FB23 /* dsputil.c in Sources */,
+				990EE1EC1ED7193E00F1FB23 /* error_resilience.c in Sources */,
+				990EE1ED1ED7193E00F1FB23 /* fft.c in Sources */,
+				990EE1EE1ED7193E00F1FB23 /* file.c in Sources */,
+				990EE1EF1ED7193E00F1FB23 /* futils.c in Sources */,
+				990EE1F01ED7193E00F1FB23 /* imgconvert.c in Sources */,
+				990EE1F11ED7193E00F1FB23 /* jrevdct.c in Sources */,
+				990EE1F21ED7193E00F1FB23 /* mdct.c in Sources */,
+				990EE1F31ED7193E00F1FB23 /* mem.c in Sources */,
+				990EE1F41ED7193E00F1FB23 /* mpegvideo.c in Sources */,
+				990EE1F51ED7193E00F1FB23 /* parser.c in Sources */,
+				990EE1F61ED7193E00F1FB23 /* simple_idct.c in Sources */,
+				990EE1F71ED7193E00F1FB23 /* svq3.c in Sources */,
+				990EE1F81ED7193E00F1FB23 /* utils.c in Sources */,
+				990EE1F91ED7193E00F1FB23 /* vp3dsp.c in Sources */,
+				990EE1FA1ED7193E00F1FB23 /* wmadec.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		990EE1FC1ED7195B00F1FB23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 990EE1D91ED7190E00F1FB23 /* WmaDecoder */;
+			targetProxy = 990EE1FB1ED7195B00F1FB23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		990EE1161ED6DB2E00F1FB23 /* Debug */ = {
@@ -430,41 +424,56 @@
 			};
 			name = Release;
 		};
-		990EE1191ED6DB2E00F1FB23 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = BTYMLC65YS;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		990EE11A1ED6DB2E00F1FB23 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = BTYMLC65YS;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		990EE1CC1ED7127200F1FB23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/Build";
 				DEVELOPMENT_TEAM = BTYMLC65YS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SYMROOT = build;
 			};
 			name = Debug;
 		};
 		990EE1CD1ED7127200F1FB23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/Build";
 				DEVELOPMENT_TEAM = BTYMLC65YS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SYMROOT = build;
+			};
+			name = Release;
+		};
+		990EE1E11ED7190F00F1FB23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/Build";
+				DEVELOPMENT_TEAM = BTYMLC65YS;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "x86_64 i386";
+			};
+			name = Debug;
+		};
+		990EE1E21ED7190F00F1FB23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/Build";
+				DEVELOPMENT_TEAM = BTYMLC65YS;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "x86_64 i386";
 			};
 			name = Release;
 		};
@@ -480,20 +489,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		990EE1181ED6DB2E00F1FB23 /* Build configuration list for PBXNativeTarget "WmaDecoder" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				990EE1191ED6DB2E00F1FB23 /* Debug */,
-				990EE11A1ED6DB2E00F1FB23 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		990EE1CE1ED7127200F1FB23 /* Build configuration list for PBXNativeTarget "WmaDecoderTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				990EE1CC1ED7127200F1FB23 /* Debug */,
 				990EE1CD1ED7127200F1FB23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		990EE1E01ED7190F00F1FB23 /* Build configuration list for PBXNativeTarget "WmaDecoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				990EE1E11ED7190F00F1FB23 /* Debug */,
+				990EE1E21ED7190F00F1FB23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

@@ -22,6 +22,8 @@
  * @file mdct.c
  * MDCT/IMDCT transforms.
  */
+extern int fft_inits(FFTContext *s, int nbits, int inverse);
+extern void fft_end(FFTContext *s);
 
 /**
  * init MDCT or IMDCT computation.
