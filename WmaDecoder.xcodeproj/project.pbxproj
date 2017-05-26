@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		990EE1CB1ED7127200F1FB23 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1CA1ED7127200F1FB23 /* main.c */; };
+		990EE1CB1ED7127200F1FB23 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1CA1ED7127200F1FB23 /* main.cpp */; };
 		990EE1D51ED7183200F1FB23 /* input.wma in CopyFiles */ = {isa = PBXBuildFile; fileRef = 990EE1D21ED717D400F1FB23 /* input.wma */; };
-		990EE1E31ED7193E00F1FB23 /* allcodecs.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1761ED710F500F1FB23 /* allcodecs.c */; };
-		990EE1E41ED7193E00F1FB23 /* allformats.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1771ED710F500F1FB23 /* allformats.c */; };
-		990EE1E51ED7193E00F1FB23 /* asf.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1781ED710F500F1FB23 /* asf.c */; };
-		990EE1E71ED7193E00F1FB23 /* avio.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE17E1ED710F500F1FB23 /* avio.c */; };
-		990EE1E81ED7193E00F1FB23 /* aviobuf.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1801ED710F500F1FB23 /* aviobuf.c */; };
-		990EE1E91ED7193E00F1FB23 /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1821ED710F500F1FB23 /* common.c */; };
-		990EE1EA1ED7193E00F1FB23 /* cutils.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1851ED710F500F1FB23 /* cutils.c */; };
-		990EE1ED1ED7193E00F1FB23 /* fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1891ED710F500F1FB23 /* fft.c */; };
-		990EE1EE1ED7193E00F1FB23 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18A1ED710F500F1FB23 /* file.c */; };
-		990EE1EF1ED7193E00F1FB23 /* futils.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18B1ED710F500F1FB23 /* futils.c */; };
-		990EE1F21ED7193E00F1FB23 /* mdct.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18E1ED710F500F1FB23 /* mdct.c */; };
-		990EE1F31ED7193E00F1FB23 /* mem.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18F1ED710F500F1FB23 /* mem.c */; };
-		990EE1F81ED7193E00F1FB23 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1981ED710F500F1FB23 /* utils.c */; };
-		990EE1FA1ED7193E00F1FB23 /* wmadec.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE19C1ED710F500F1FB23 /* wmadec.c */; };
+		990EE1E31ED7193E00F1FB23 /* allcodecs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1761ED710F500F1FB23 /* allcodecs.cpp */; };
+		990EE1E41ED7193E00F1FB23 /* allformats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1771ED710F500F1FB23 /* allformats.cpp */; };
+		990EE1E51ED7193E00F1FB23 /* asf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1781ED710F500F1FB23 /* asf.cpp */; };
+		990EE1E71ED7193E00F1FB23 /* avio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE17E1ED710F500F1FB23 /* avio.cpp */; };
+		990EE1E81ED7193E00F1FB23 /* aviobuf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1801ED710F500F1FB23 /* aviobuf.cpp */; };
+		990EE1E91ED7193E00F1FB23 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1821ED710F500F1FB23 /* common.cpp */; };
+		990EE1EA1ED7193E00F1FB23 /* cutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1851ED710F500F1FB23 /* cutils.cpp */; };
+		990EE1ED1ED7193E00F1FB23 /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1891ED710F500F1FB23 /* fft.cpp */; };
+		990EE1EE1ED7193E00F1FB23 /* file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18A1ED710F500F1FB23 /* file.cpp */; };
+		990EE1EF1ED7193E00F1FB23 /* futils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18B1ED710F500F1FB23 /* futils.cpp */; };
+		990EE1F21ED7193E00F1FB23 /* mdct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18E1ED710F500F1FB23 /* mdct.cpp */; };
+		990EE1F31ED7193E00F1FB23 /* mem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18F1ED710F500F1FB23 /* mem.cpp */; };
+		990EE1F81ED7193E00F1FB23 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1981ED710F500F1FB23 /* utils.cpp */; };
+		990EE1FA1ED7193E00F1FB23 /* wmadec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE19C1ED710F500F1FB23 /* wmadec.cpp */; };
 		990EE1FD1ED7196000F1FB23 /* libWmaDecoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 990EE1DA1ED7190E00F1FB23 /* libWmaDecoder.a */; };
-		990EE2001ED7243D00F1FB23 /* dsputil.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1FE1ED7243D00F1FB23 /* dsputil.c */; };
-		990EE2021ED7275D00F1FB23 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 990EE2011ED7275D00F1FB23 /* parser.c */; };
+		990EE2001ED7243D00F1FB23 /* dsputil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1FE1ED7243D00F1FB23 /* dsputil.cpp */; };
+		990EE2021ED7275D00F1FB23 /* parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE2011ED7275D00F1FB23 /* parser.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,36 +61,36 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		990EE1761ED710F500F1FB23 /* allcodecs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = allcodecs.c; path = WmaDecoder/allcodecs.c; sourceTree = SOURCE_ROOT; };
-		990EE1771ED710F500F1FB23 /* allformats.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = allformats.c; path = WmaDecoder/allformats.c; sourceTree = SOURCE_ROOT; };
-		990EE1781ED710F500F1FB23 /* asf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = asf.c; path = WmaDecoder/asf.c; sourceTree = SOURCE_ROOT; };
+		990EE1761ED710F500F1FB23 /* allcodecs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = allcodecs.cpp; path = WmaDecoder/allcodecs.cpp; sourceTree = SOURCE_ROOT; };
+		990EE1771ED710F500F1FB23 /* allformats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = allformats.cpp; path = WmaDecoder/allformats.cpp; sourceTree = SOURCE_ROOT; };
+		990EE1781ED710F500F1FB23 /* asf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = asf.cpp; path = WmaDecoder/asf.cpp; sourceTree = SOURCE_ROOT; };
 		990EE17B1ED710F500F1FB23 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avcodec.h; path = WmaDecoder/avcodec.h; sourceTree = SOURCE_ROOT; };
 		990EE17C1ED710F500F1FB23 /* avformat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avformat.h; path = WmaDecoder/avformat.h; sourceTree = SOURCE_ROOT; };
 		990EE17D1ED710F500F1FB23 /* avi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avi.h; path = WmaDecoder/avi.h; sourceTree = SOURCE_ROOT; };
-		990EE17E1ED710F500F1FB23 /* avio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = avio.c; path = WmaDecoder/avio.c; sourceTree = SOURCE_ROOT; };
+		990EE17E1ED710F500F1FB23 /* avio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = avio.cpp; path = WmaDecoder/avio.cpp; sourceTree = SOURCE_ROOT; };
 		990EE17F1ED710F500F1FB23 /* avio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avio.h; path = WmaDecoder/avio.h; sourceTree = SOURCE_ROOT; };
-		990EE1801ED710F500F1FB23 /* aviobuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = aviobuf.c; path = WmaDecoder/aviobuf.c; sourceTree = SOURCE_ROOT; };
+		990EE1801ED710F500F1FB23 /* aviobuf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aviobuf.cpp; path = WmaDecoder/aviobuf.cpp; sourceTree = SOURCE_ROOT; };
 		990EE1811ED710F500F1FB23 /* bswap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bswap.h; path = WmaDecoder/bswap.h; sourceTree = SOURCE_ROOT; };
-		990EE1821ED710F500F1FB23 /* common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = common.c; path = WmaDecoder/common.c; sourceTree = SOURCE_ROOT; };
+		990EE1821ED710F500F1FB23 /* common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = common.cpp; path = WmaDecoder/common.cpp; sourceTree = SOURCE_ROOT; };
 		990EE1831ED710F500F1FB23 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = common.h; path = WmaDecoder/common.h; sourceTree = SOURCE_ROOT; };
-		990EE1851ED710F500F1FB23 /* cutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cutils.c; path = WmaDecoder/cutils.c; sourceTree = SOURCE_ROOT; };
-		990EE1891ED710F500F1FB23 /* fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fft.c; path = WmaDecoder/fft.c; sourceTree = SOURCE_ROOT; };
-		990EE18A1ED710F500F1FB23 /* file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = file.c; path = WmaDecoder/file.c; sourceTree = SOURCE_ROOT; };
-		990EE18B1ED710F500F1FB23 /* futils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = futils.c; path = WmaDecoder/futils.c; sourceTree = SOURCE_ROOT; };
-		990EE18E1ED710F500F1FB23 /* mdct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mdct.c; path = WmaDecoder/mdct.c; sourceTree = SOURCE_ROOT; };
-		990EE18F1ED710F500F1FB23 /* mem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mem.c; path = WmaDecoder/mem.c; sourceTree = SOURCE_ROOT; };
+		990EE1851ED710F500F1FB23 /* cutils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cutils.cpp; path = WmaDecoder/cutils.cpp; sourceTree = SOURCE_ROOT; };
+		990EE1891ED710F500F1FB23 /* fft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fft.cpp; path = WmaDecoder/fft.cpp; sourceTree = SOURCE_ROOT; };
+		990EE18A1ED710F500F1FB23 /* file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = file.cpp; path = WmaDecoder/file.cpp; sourceTree = SOURCE_ROOT; };
+		990EE18B1ED710F500F1FB23 /* futils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = futils.cpp; path = WmaDecoder/futils.cpp; sourceTree = SOURCE_ROOT; };
+		990EE18E1ED710F500F1FB23 /* mdct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mdct.cpp; path = WmaDecoder/mdct.cpp; sourceTree = SOURCE_ROOT; };
+		990EE18F1ED710F500F1FB23 /* mem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mem.cpp; path = WmaDecoder/mem.cpp; sourceTree = SOURCE_ROOT; };
 		990EE1921ED710F500F1FB23 /* os_support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = os_support.h; path = WmaDecoder/os_support.h; sourceTree = SOURCE_ROOT; };
 		990EE1941ED710F500F1FB23 /* rational.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rational.h; path = WmaDecoder/rational.h; sourceTree = SOURCE_ROOT; };
-		990EE1981ED710F500F1FB23 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = utils.c; path = WmaDecoder/utils.c; sourceTree = SOURCE_ROOT; };
+		990EE1981ED710F500F1FB23 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = utils.cpp; path = WmaDecoder/utils.cpp; sourceTree = SOURCE_ROOT; };
 		990EE19B1ED710F500F1FB23 /* wmadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wmadata.h; path = WmaDecoder/wmadata.h; sourceTree = SOURCE_ROOT; };
-		990EE19C1ED710F500F1FB23 /* wmadec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = wmadec.c; path = WmaDecoder/wmadec.c; sourceTree = SOURCE_ROOT; };
+		990EE19C1ED710F500F1FB23 /* wmadec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = wmadec.cpp; path = WmaDecoder/wmadec.cpp; sourceTree = SOURCE_ROOT; };
 		990EE1C81ED7127200F1FB23 /* WmaDecoderTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WmaDecoderTest; sourceTree = BUILT_PRODUCTS_DIR; };
-		990EE1CA1ED7127200F1FB23 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		990EE1CA1ED7127200F1FB23 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		990EE1D21ED717D400F1FB23 /* input.wma */ = {isa = PBXFileReference; lastKnownFileType = file; path = input.wma; sourceTree = "<group>"; };
 		990EE1DA1ED7190E00F1FB23 /* libWmaDecoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWmaDecoder.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		990EE1FE1ED7243D00F1FB23 /* dsputil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dsputil.c; path = WmaDecoder/dsputil.c; sourceTree = SOURCE_ROOT; };
+		990EE1FE1ED7243D00F1FB23 /* dsputil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dsputil.cpp; path = WmaDecoder/dsputil.cpp; sourceTree = SOURCE_ROOT; };
 		990EE1FF1ED7243D00F1FB23 /* dsputil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dsputil.h; path = WmaDecoder/dsputil.h; sourceTree = SOURCE_ROOT; };
-		990EE2011ED7275D00F1FB23 /* parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = parser.c; path = WmaDecoder/parser.c; sourceTree = SOURCE_ROOT; };
+		990EE2011ED7275D00F1FB23 /* parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = parser.cpp; path = WmaDecoder/parser.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,32 +133,32 @@
 		990EE11B1ED6DB4B00F1FB23 /* WmaDecoder */ = {
 			isa = PBXGroup;
 			children = (
-				990EE1761ED710F500F1FB23 /* allcodecs.c */,
-				990EE1771ED710F500F1FB23 /* allformats.c */,
-				990EE1781ED710F500F1FB23 /* asf.c */,
+				990EE1761ED710F500F1FB23 /* allcodecs.cpp */,
+				990EE1771ED710F500F1FB23 /* allformats.cpp */,
+				990EE1781ED710F500F1FB23 /* asf.cpp */,
 				990EE17B1ED710F500F1FB23 /* avcodec.h */,
 				990EE17C1ED710F500F1FB23 /* avformat.h */,
 				990EE17D1ED710F500F1FB23 /* avi.h */,
-				990EE17E1ED710F500F1FB23 /* avio.c */,
+				990EE17E1ED710F500F1FB23 /* avio.cpp */,
 				990EE17F1ED710F500F1FB23 /* avio.h */,
-				990EE1801ED710F500F1FB23 /* aviobuf.c */,
+				990EE1801ED710F500F1FB23 /* aviobuf.cpp */,
 				990EE1811ED710F500F1FB23 /* bswap.h */,
-				990EE1821ED710F500F1FB23 /* common.c */,
+				990EE1821ED710F500F1FB23 /* common.cpp */,
 				990EE1831ED710F500F1FB23 /* common.h */,
-				990EE1851ED710F500F1FB23 /* cutils.c */,
-				990EE1891ED710F500F1FB23 /* fft.c */,
-				990EE1FE1ED7243D00F1FB23 /* dsputil.c */,
+				990EE1851ED710F500F1FB23 /* cutils.cpp */,
+				990EE1891ED710F500F1FB23 /* fft.cpp */,
+				990EE1FE1ED7243D00F1FB23 /* dsputil.cpp */,
 				990EE1FF1ED7243D00F1FB23 /* dsputil.h */,
-				990EE18A1ED710F500F1FB23 /* file.c */,
-				990EE18B1ED710F500F1FB23 /* futils.c */,
-				990EE2011ED7275D00F1FB23 /* parser.c */,
-				990EE18E1ED710F500F1FB23 /* mdct.c */,
-				990EE18F1ED710F500F1FB23 /* mem.c */,
+				990EE18A1ED710F500F1FB23 /* file.cpp */,
+				990EE18B1ED710F500F1FB23 /* futils.cpp */,
+				990EE2011ED7275D00F1FB23 /* parser.cpp */,
+				990EE18E1ED710F500F1FB23 /* mdct.cpp */,
+				990EE18F1ED710F500F1FB23 /* mem.cpp */,
 				990EE1921ED710F500F1FB23 /* os_support.h */,
 				990EE1941ED710F500F1FB23 /* rational.h */,
-				990EE1981ED710F500F1FB23 /* utils.c */,
+				990EE1981ED710F500F1FB23 /* utils.cpp */,
 				990EE19B1ED710F500F1FB23 /* wmadata.h */,
-				990EE19C1ED710F500F1FB23 /* wmadec.c */,
+				990EE19C1ED710F500F1FB23 /* wmadec.cpp */,
 			);
 			name = WmaDecoder;
 			path = wmadecoder2/wma_decoder;
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				990EE1D21ED717D400F1FB23 /* input.wma */,
-				990EE1CA1ED7127200F1FB23 /* main.c */,
+				990EE1CA1ED7127200F1FB23 /* main.cpp */,
 			);
 			path = WmaDecoderTest;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				990EE1CB1ED7127200F1FB23 /* main.c in Sources */,
+				990EE1CB1ED7127200F1FB23 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,22 +263,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				990EE1E31ED7193E00F1FB23 /* allcodecs.c in Sources */,
-				990EE1E41ED7193E00F1FB23 /* allformats.c in Sources */,
-				990EE1E51ED7193E00F1FB23 /* asf.c in Sources */,
-				990EE1E71ED7193E00F1FB23 /* avio.c in Sources */,
-				990EE1E81ED7193E00F1FB23 /* aviobuf.c in Sources */,
-				990EE1E91ED7193E00F1FB23 /* common.c in Sources */,
-				990EE1EA1ED7193E00F1FB23 /* cutils.c in Sources */,
-				990EE2021ED7275D00F1FB23 /* parser.c in Sources */,
-				990EE1ED1ED7193E00F1FB23 /* fft.c in Sources */,
-				990EE1EE1ED7193E00F1FB23 /* file.c in Sources */,
-				990EE1EF1ED7193E00F1FB23 /* futils.c in Sources */,
-				990EE1F21ED7193E00F1FB23 /* mdct.c in Sources */,
-				990EE1F31ED7193E00F1FB23 /* mem.c in Sources */,
-				990EE1F81ED7193E00F1FB23 /* utils.c in Sources */,
-				990EE1FA1ED7193E00F1FB23 /* wmadec.c in Sources */,
-				990EE2001ED7243D00F1FB23 /* dsputil.c in Sources */,
+				990EE1E31ED7193E00F1FB23 /* allcodecs.cpp in Sources */,
+				990EE1E41ED7193E00F1FB23 /* allformats.cpp in Sources */,
+				990EE1E51ED7193E00F1FB23 /* asf.cpp in Sources */,
+				990EE1E71ED7193E00F1FB23 /* avio.cpp in Sources */,
+				990EE1E81ED7193E00F1FB23 /* aviobuf.cpp in Sources */,
+				990EE1E91ED7193E00F1FB23 /* common.cpp in Sources */,
+				990EE1EA1ED7193E00F1FB23 /* cutils.cpp in Sources */,
+				990EE2021ED7275D00F1FB23 /* parser.cpp in Sources */,
+				990EE1ED1ED7193E00F1FB23 /* fft.cpp in Sources */,
+				990EE1EE1ED7193E00F1FB23 /* file.cpp in Sources */,
+				990EE1EF1ED7193E00F1FB23 /* futils.cpp in Sources */,
+				990EE1F21ED7193E00F1FB23 /* mdct.cpp in Sources */,
+				990EE1F31ED7193E00F1FB23 /* mem.cpp in Sources */,
+				990EE1F81ED7193E00F1FB23 /* utils.cpp in Sources */,
+				990EE1FA1ED7193E00F1FB23 /* wmadec.cpp in Sources */,
+				990EE2001ED7243D00F1FB23 /* dsputil.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
