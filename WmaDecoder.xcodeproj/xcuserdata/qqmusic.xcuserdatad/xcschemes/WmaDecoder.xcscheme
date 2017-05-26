@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "990EE10E1ED6DB2E00F1FB23"
-               BuildableName = "libWmaDecoder.dylib"
+               BlueprintIdentifier = "990EE1D91ED7190E00F1FB23"
+               BuildableName = "libWmaDecoder.a"
                BlueprintName = "WmaDecoder"
                ReferencedContainer = "container:WmaDecoder.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "990EE10E1ED6DB2E00F1FB23"
-            BuildableName = "libWmaDecoder.dylib"
+            BlueprintIdentifier = "990EE1D91ED7190E00F1FB23"
+            BuildableName = "libWmaDecoder.a"
             BlueprintName = "WmaDecoder"
             ReferencedContainer = "container:WmaDecoder.xcodeproj">
          </BuildableReference>
@@ -63,8 +63,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "990EE10E1ED6DB2E00F1FB23"
-            BuildableName = "libWmaDecoder.dylib"
+            BlueprintIdentifier = "990EE1D91ED7190E00F1FB23"
+            BuildableName = "libWmaDecoder.a"
             BlueprintName = "WmaDecoder"
             ReferencedContainer = "container:WmaDecoder.xcodeproj">
          </BuildableReference>

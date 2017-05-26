@@ -1,7 +1,14 @@
 #ifndef FFMPEG_AVI_H
 #define FFMPEG_AVI_H
 
+#include "namespace.h"
 #include "avcodec.h"
+
+namespace WMADECODER_NAMESPACE
+{
+
+    
+
 
 #define AVIF_HASINDEX		0x00000010	// Index at end of file?
 #define AVIF_MUSTUSEINDEX	0x00000020
@@ -39,5 +46,5 @@ unsigned int codec_get_bmp_tag(int id);
 unsigned int codec_get_wav_tag(int id);
 enum CodecID codec_get_bmp_id(unsigned int tag);
 enum CodecID codec_get_wav_id(unsigned int tag);
-
+}
 #endif /* FFMPEG_AVI_H */

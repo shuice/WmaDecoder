@@ -16,7 +16,11 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
+#include "namespace.h"
 #include "dsputil.h"
+
+
+namespace WMADECODER_NAMESPACE{
 
 /**
  * @file mdct.c
@@ -175,4 +179,6 @@ void ff_mdct_end(MDCTContext *s)
     av_freep(&s->tcos);
     av_freep(&s->tsin);
     fft_end(&s->fft);
+}
+
 }

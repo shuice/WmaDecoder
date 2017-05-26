@@ -22,8 +22,13 @@
  * Utils for libavcodec.
  */
 
+    
+
+#include "common.h"
 #include "avcodec.h"
 
+
+namespace WMADECODER_NAMESPACE{
 /* If you do not call this function, then you can select exactly which
    formats you want to support */
 
@@ -42,4 +47,5 @@ void avcodec_register_all(void)
     register_avcodec(&wmav1_decoder);
     register_avcodec(&wmav2_decoder);
 }
-
+    
+}

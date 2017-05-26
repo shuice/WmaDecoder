@@ -21,17 +21,16 @@
  * @file mem.c
  * default memory allocator for libavcodec.
  */
- 
+#include "namespace.h"
 #include "avcodec.h"
+
+namespace WMADECODER_NAMESPACE{
 
 /* here we can use OS dependant allocation functions */
 #undef malloc
 #undef free
 #undef realloc
 
-#ifdef HAVE_MALLOC_H
-//#include <malloc.h>
-#endif
 
 /* you can redefine av_malloc and av_free in your project to use your
    memory allocator. You do not need to suppress this file because the
@@ -114,3 +113,4 @@ void av_free(void *ptr)
 #endif
 }
 
+}

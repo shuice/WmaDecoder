@@ -16,6 +16,8 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
+
+#include "namespace.h"
 #include "avformat.h"
 #include <fcntl.h>
 #ifndef CONFIG_WIN32
@@ -27,6 +29,7 @@
 #define open(fname,oflag,pmode) _open(fname,oflag,pmode)
 #endif /* CONFIG_WIN32 */
 
+namespace WMADECODER_NAMESPACE{
 
 /* standard file protocol */
 
@@ -89,3 +92,5 @@ URLProtocol file_protocol = {
     file_seek,
     file_close,
 };
+
+}

@@ -21,9 +21,13 @@
  * @file wmadec.c
  * WMA compatible decoder.
  */
-
+#include "namespace.h"
 #include "avcodec.h"
 #include "dsputil.h"
+#include "common.h"
+#include "wmadata.h"
+
+namespace WMADecoder{
 
 /* size of blocks */
 #define BLOCK_MIN_BITS 7
@@ -117,16 +121,10 @@ typedef struct WMADecodeContext {
 #endif
 } WMADecodeContext;
 
-typedef struct CoefVLCTable {
-    int n; /* total number of codes */
-    const uint32_t *huffcodes; /* VLC bit values */
-    const uint8_t *huffbits;   /* VLC bit size */
-    const uint16_t *levels; /* table to build run/level tables */
-} CoefVLCTable;
 
 static void wma_lsp_to_curve_init(WMADecodeContext *s, int frame_len);
 
-#include "wmadata.h"
+
 
 #ifdef TRACE
 static void dump_shorts(const char *name, const short *tab, int n)
@@ -161,7 +159,7 @@ static void dump_floats(const char *name, int prec, const float *tab, int n)
 #endif
 
 /* XXX: use same run/length optimization as mpeg decoders */
-static void init_coef_vlc(VLC *vlc, 
+static void init_coef_vlc(VLC *vlc,
                           uint16_t **prun_table, uint16_t **plevel_table,
                           const CoefVLCTable *vlc_table)
 {
@@ -321,7 +319,7 @@ static int wma_decode_init(AVCodecContext * avctx)
     dprintf("version=%d channels=%d sample_rate=%d bitrate=%d block_align=%d\n",
            s->version, s->nb_channels, s->sample_rate, s->bit_rate, 
            s->block_align);
-    dprintf("bps=%f bps1=%f high_freq=%f bitoffset=%d\n", 
+    dprintf("bps=%f bps1=%f high_freq=%f bitoffset=%d\n",
            bps, bps1, high_freq, s->byte_offset_bits);
     dprintf("use_noise_coding=%d use_exp_vlc=%d nb_block_sizes=%d\n",
            s->use_noise_coding, s->use_exp_vlc, s->nb_block_sizes);
@@ -1319,3 +1317,5 @@ AVCodec wmav2_decoder =
     wma_decode_end,
     wma_decode_superframe,
 };
+
+}

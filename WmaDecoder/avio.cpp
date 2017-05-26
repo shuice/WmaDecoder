@@ -16,8 +16,13 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
+#include "namespace.h"
 #include "avformat.h"
 #include <errno.h>
+
+namespace WMADECODER_NAMESPACE
+{
+
 
 static int default_interrupt_cb(void);
 
@@ -188,4 +193,6 @@ void url_set_interrupt_cb(URLInterruptCB *interrupt_cb)
     if (!interrupt_cb)
         interrupt_cb = default_interrupt_cb;
     url_interrupt_cb = interrupt_cb;
+}
+
 }

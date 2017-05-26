@@ -23,11 +23,13 @@
  * @file utils.c
  * utils.
  */
- 
+#include "namespace.h"
 #include "avcodec.h"
 #include "dsputil.h"
 #include <stdarg.h>
 #include <limits.h>
+
+namespace WMADECODER_NAMESPACE{
 
 static void avcodec_default_free_buffers(AVCodecContext *s);
 
@@ -393,3 +395,5 @@ int avcodec_thread_init(AVCodecContext *s, int thread_count){
     return -1;
 }
 #endif
+    
+}

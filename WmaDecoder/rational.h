@@ -23,6 +23,10 @@
  * Rational numbers.
  * @author Michael Niedermayer <michaelni@gmx.at>
  */
+#include "namespace.h"
+
+namespace WMADECODER_NAMESPACE
+{
 
 #ifndef RATIONAL_H
 #define RATIONAL_H
@@ -47,4 +51,5 @@ AVRational av_add_q(AVRational b, AVRational c);
 AVRational av_sub_q(AVRational b, AVRational c);
 AVRational av_d2q(double d, int max);
 
+}
 #endif // RATIONAL_H

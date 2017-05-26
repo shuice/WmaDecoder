@@ -1,9 +1,17 @@
 #ifndef AVFORMAT_H
 #define AVFORMAT_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "namespace.h"
+#include <time.h>
+#include <stdio.h>  /* FILE */
+#include "avcodec.h"
+#include "avio.h"
+#include "os_support.h"
+
+namespace WMADECODER_NAMESPACE
+{
+
+
 
 #define LIBAVFORMAT_BUILD       4611
 
@@ -11,11 +19,6 @@ extern "C" {
 #define LIBAVFORMAT_VERSION     FFMPEG_VERSION
 #define LIBAVFORMAT_IDENT	"FFmpeg" FFMPEG_VERSION "b" AV_STRINGIFY(LIBAVFORMAT_BUILD)
 
-#include <time.h>
-#include <stdio.h>  /* FILE */
-#include "avcodec.h"
-
-#include "avio.h"
 
 /* packet functions */
 
@@ -427,7 +430,7 @@ int dv1394_init(void);
 
 #ifdef HAVE_AV_CONFIG_H
 
-#include "os_support.h"
+
 
 int strstart(const char *str, const char *val, const char **ptr);
 void pstrcpy(char *buf, int buf_size, const char *str);
@@ -446,8 +449,5 @@ int match_ext(const char *filename, const char *extensions);
 
 #endif /* HAVE_AV_CONFIG_H */
 
-#ifdef __cplusplus
 }
-#endif
-
 #endif /* AVFORMAT_H */

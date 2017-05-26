@@ -16,10 +16,14 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
+#include "namespace.h"
 #include "avformat.h"
 #include "avio.h"
 #include <stdarg.h>
 #include <errno.h>
+
+namespace WMADECODER_NAMESPACE
+{
 
 #define IO_BUFFER_SIZE 32768
 
@@ -474,5 +478,8 @@ char *url_fgets(ByteIOContext *s, char *buf, int buf_size)
 int url_fget_max_packet_size(ByteIOContext *s)
 {
     return s->max_packet_size;
+}
+
+
 }
 

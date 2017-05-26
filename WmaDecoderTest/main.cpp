@@ -11,6 +11,7 @@
 #undef NDEBUG
 #include <assert.h>
 
+using namespace WMADecoder;
 
 
 static unsigned char headbuf[44];

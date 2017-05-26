@@ -16,7 +16,10 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
+#include "namespace.h"
 #include "avformat.h"
+
+namespace WMADECODER_NAMESPACE{
 
 #if !defined(CONFIG_NOCUTILS)
 /**
@@ -82,4 +85,5 @@ char *pstrcat(char *buf, int buf_size, const char *s)
     return buf;
 }
 
+}
 #endif

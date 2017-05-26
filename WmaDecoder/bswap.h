@@ -1,7 +1,7 @@
 #ifndef __BSWAP_H__
 #define __BSWAP_H__
 
-/* It's need for ffmpeg. Else where will be defined ARCH_X86?*/
+#include "namespace.h"
 
 #ifdef HAVE_BYTESWAP_H
 #include <byteswap.h>
@@ -9,6 +9,14 @@
 
 //#include <inttypes.h>
 #include "inttypes.h"
+
+
+/* It's need for ffmpeg. Else where will be defined ARCH_X86?*/
+
+namespace WMADECODER_NAMESPACE
+{
+
+
 
 #ifdef ARCH_X86
 inline static unsigned short ByteSwap16(unsigned short x)
@@ -88,4 +96,5 @@ inline static unsigned long long int ByteSwap64(unsigned long long int x)
 #define le2me_64(x) (x)
 #endif
 
+}
 #endif

@@ -16,12 +16,16 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
+#include "namespace.h"
 #include "avformat.h"
 #include "avi.h"
 
+#include <assert.h>
+
+namespace WMADECODER_NAMESPACE{
 
 #undef NDEBUG
-#include <assert.h>
+
 #define MPA_FRAME_SIZE 1152
 #define PACKET_SIZE 3200
 #define PACKET_HEADER_SIZE 12
@@ -1132,4 +1136,5 @@ int asf_init(void)
 {
     av_register_input_format(&asf_iformat);
     return 0;
+}
 }

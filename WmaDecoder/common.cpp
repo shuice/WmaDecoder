@@ -24,9 +24,12 @@
  * @file common.c
  * common internal api.
  */
-
+#include "namespace.h"
 #include "avcodec.h"
 #include "common.h"
+
+namespace WMADECODER_NAMESPACE{
+
 
 const uint8_t ff_sqrt_tab[128]={
         0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5,
@@ -290,4 +293,6 @@ void free_vlc(VLC *vlc)
 int64_t ff_gcd(int64_t a, int64_t b){
     if(b) return ff_gcd(b, a%b);
     else  return a;
+}
+
 }

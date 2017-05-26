@@ -1,6 +1,7 @@
 #ifndef _OS_SUPPORT_H
 #define _OS_SUPPORT_H
 
+#include "namespace.h"
 /**
  * @file os_support.h
  * miscellaneous OS support macros and functions.
@@ -33,5 +34,11 @@ __declspec(dllimport) void __stdcall Sleep(unsigned long dwMilliseconds);
 #include <stdlib.h>
 
 
+namespace WMADECODER_NAMESPACE
+{
 
+
+
+
+}
 #endif /* _OS_SUPPORT_H */

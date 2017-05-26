@@ -16,12 +16,16 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
+
+#include "namespace.h"
 #include "avformat.h"
 //added by yuanbin
 #include "os_support.h"
 
 #undef NDEBUG
 #include <assert.h>
+
+namespace WMADECODER_NAMESPACE{
 
 AVInputFormat *first_iformat;
 AVOutputFormat *first_oformat;
@@ -2037,4 +2041,6 @@ void av_frac_add(AVFrac *f, int64_t incr)
         num = num % den;
     }
     f->num = num;
+}
+
 }

@@ -6,6 +6,8 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+#include "namespace.h"
+
 
 #if defined(WIN32) && !defined(__MINGW32__) && !defined(__CYGWIN__)
 #    define CONFIG_WIN32
@@ -37,22 +39,30 @@
 #    endif
 
 #include <stddef.h>
+
+#ifdef USE_FASTMEMCPY
+#include "fastmemcpy.h"
+#endif
+
+#include <float.h>
+
+
 #ifndef offsetof
 # define offsetof(T,F) ((unsigned int)((char *)&((T *)0)->F))
 #endif
 
 #define AVOPTION_CODEC_BOOL(name, help, field) \
-    { name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_BOOL }
+{ name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_BOOL }
 #define AVOPTION_CODEC_DOUBLE(name, help, field, minv, maxv, defval) \
-    { name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_DOUBLE, minv, maxv, defval }
+{ name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_DOUBLE, minv, maxv, defval }
 #define AVOPTION_CODEC_FLAG(name, help, field, flag, defval) \
-    { name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_FLAG, flag, 0, defval }
+{ name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_FLAG, flag, 0, defval }
 #define AVOPTION_CODEC_INT(name, help, field, minv, maxv, defval) \
-    { name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_INT, minv, maxv, defval }
+{ name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_INT, minv, maxv, defval }
 #define AVOPTION_CODEC_STRING(name, help, field, str, val) \
-    { name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_STRING, .defval = val, .defstr = str }
+{ name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_STRING, .defval = val, .defstr = str }
 #define AVOPTION_CODEC_RCOVERRIDE(name, help, field) \
-    { name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_RCOVERRIDE, .defval = 0, .defstr = NULL }
+{ name, help, offsetof(AVCodecContext, field), FF_OPT_TYPE_RCOVERRIDE, .defval = 0, .defstr = NULL }
 #define AVOPTION_SUB(ptr) { .name = NULL, .help = (const char*)ptr }
 #define AVOPTION_END() AVOPTION_SUB(NULL)
 
@@ -84,19 +94,19 @@
 //#   include <inttypes.h>
 #   include "inttypes.h"
 #else
-    typedef signed char  int8_t;
-    typedef signed short int16_t;
-    typedef signed int   int32_t;
-    typedef unsigned char  uint8_t;
-    typedef unsigned short uint16_t;
-    typedef unsigned int   uint32_t;
+typedef signed char  int8_t;
+typedef signed short int16_t;
+typedef signed int   int32_t;
+typedef unsigned char  uint8_t;
+typedef unsigned short uint16_t;
+typedef unsigned int   uint32_t;
 
 #   ifdef CONFIG_WIN32
-        typedef signed __int64   int64_t;
-        typedef unsigned __int64 uint64_t;
+typedef signed __int64   int64_t;
+typedef unsigned __int64 uint64_t;
 #   else /* other OS */
-        typedef signed long long   int64_t;
-        typedef unsigned long long uint64_t;
+typedef signed long long   int64_t;
+typedef unsigned long long uint64_t;
 #   endif /* other OS */
 #endif /* HAVE_INTTYPES_H */
 
@@ -139,8 +149,14 @@ typedef unsigned int  uint_fast32_t;
 #    endif
 #endif
 
+
+
+namespace WMADECODER_NAMESPACE
+{
+
+
 #if defined(CONFIG_OS2) || defined(CONFIG_SUNOS)
-static inline float floorf(float f) { 
+static inline float floorf(float f) {
     return floor(f); 
 }
 #endif
@@ -182,11 +198,6 @@ static inline float floorf(float f) {
 
 #ifdef HAVE_AV_CONFIG_H
 
-#ifdef USE_FASTMEMCPY
-#include "fastmemcpy.h"
-#endif
-
-#include <float.h>
 
 #endif /* HAVE_AV_CONFIG_H */
 
@@ -409,8 +420,7 @@ static inline uint32_t unaligned32(const void *v) {
 }
 #    else
 static inline uint32_t unaligned32(const void *v) {
-    return *(const uint32_t *) v;
-}
+}}
 #    endif
 #endif //!ARCH_X86
 
@@ -1316,4 +1326,5 @@ tend= rdtsc();\
 
 #endif /* HAVE_AV_CONFIG_H */
 
+}
 #endif /* COMMON_H */

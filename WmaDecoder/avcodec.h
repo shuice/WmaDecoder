@@ -1,19 +1,20 @@
 #ifndef AVCODEC_H
 #define AVCODEC_H
 
+#include "namespace.h"
+#include "common.h"
+#include "rational.h"
+#include <sys/types.h> /* size_t */
+#include <stdarg.h>
 /**
  * @file avcodec.h
  * external api header.
  */
+namespace WMADECODER_NAMESPACE
+{
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
-#include "common.h"
-#include "rational.h"
-#include <sys/types.h> /* size_t */
 
 #define FFMPEG_VERSION_INT     0x000409
 #define FFMPEG_VERSION         "0.4.9-pre1"
@@ -1949,7 +1950,7 @@ void img_copy(AVPicture *dst, const AVPicture *src,
 
 /* av_log API */
 
-#include <stdarg.h>
+
 
 #define AV_LOG_QUIET -1
 #define AV_LOG_ERROR 0
@@ -1981,8 +1982,6 @@ extern void av_log_set_callback(void (*)(void*, int, const char*, va_list));
                     ((uint8_t*)(x))[0])
 #endif
 
-#ifdef __cplusplus
-}
-#endif
 
+}
 #endif /* AVCODEC_H */

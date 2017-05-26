@@ -3,6 +3,13 @@
  * Various WMA tables.
  */
 
+#include "namespace.h"
+
+namespace WMADECODER_NAMESPACE
+{
+    
+
+
 #define NB_LSP_COEFS 10
 
 static const uint16_t wma_critical_freqs[25] = {
@@ -1392,6 +1399,14 @@ static const uint16_t levels5[40] = {
   1,  1,  1,  1,  1,  1,  1,  1,
 };
     
+    typedef struct CoefVLCTable {
+        int n; /* total number of codes */
+        const uint32_t *huffcodes; /* VLC bit values */
+        const uint8_t *huffbits;   /* VLC bit size */
+        const uint16_t *levels; /* table to build run/level tables */
+    } CoefVLCTable;
+
+    
 static const CoefVLCTable coef_vlcs[6] = {
     { 
         sizeof(coef0_huffbits), coef0_huffcodes, coef0_huffbits, levels0,
@@ -1412,3 +1427,5 @@ static const CoefVLCTable coef_vlcs[6] = {
         sizeof(coef5_huffbits), coef5_huffcodes, coef5_huffbits, levels5,
     },
 };
+
+}

@@ -1,6 +1,12 @@
 #ifndef AVIO_H
 #define AVIO_H
 
+#include "namespace.h"
+
+namespace WMADECODER_NAMESPACE
+{
+
+    
 /* output byte stream handling */
 
 typedef int64_t offset_t;
@@ -163,6 +169,6 @@ extern URLProtocol tcp_protocol;
 
 /* http.c */
 extern URLProtocol http_protocol;
-
+}
 #endif
 

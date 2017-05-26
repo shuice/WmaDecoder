@@ -21,8 +21,10 @@
  * @file fft.c
  * FFT/IFFT transforms.
  */
-
+#include "namespace.h"
 #include "dsputil.h"
+
+namespace WMADECODER_NAMESPACE{
 
 /**
  * The size of the FFT is 2^nbits. If inverse is TRUE, inverse FFT is
@@ -327,3 +329,4 @@ void fft_end(FFTContext *s)
     av_freep(&s->exptab1);
 }
 
+}

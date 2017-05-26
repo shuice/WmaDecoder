@@ -28,8 +28,21 @@
 #ifndef DSPUTIL_H
 #define DSPUTIL_H
 
+#include "namespace.h"
+
 #include "common.h"
 #include "avcodec.h"
+#if defined(HAVE_ALTIVEC) && !defined(CONFIG_DARWIN)
+#define pixel altivec_pixel
+#include <altivec.h>
+#undef pixel
+#endif
+
+
+namespace WMADECODER_NAMESPACE
+{
+
+    
 
 
 //#define DEBUG
@@ -431,11 +444,6 @@ void dsputil_init_alpha(DSPContext* c, AVCodecContext *avctx);
 //extern int mm_flags;
 int mm_flags;
 
-#if defined(HAVE_ALTIVEC) && !defined(CONFIG_DARWIN)
-#define pixel altivec_pixel
-#include <altivec.h>
-#undef pixel
-#endif
 
 #define __align8 __attribute__ ((aligned (16)))
 
@@ -552,4 +560,5 @@ long int lrintf(float x);
 #include <math.h>
 #endif
 
+}
 #endif

@@ -24,9 +24,11 @@
  * @file dsputil.c
  * DSP utils
  */
- 
+ #include "namespace.h"
 #include "avcodec.h"
 #include "dsputil.h"
+
+namespace WMADECODER_NAMESPACE{
 
 uint8_t cropTbl[256 + 2 * MAX_NEG_CROP];
 uint32_t squareTbl[512];
@@ -232,4 +234,6 @@ long int lrintf(float x)
 #else
     return (int)(rint(x));
 #endif
+}
+
 }
