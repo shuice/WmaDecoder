@@ -328,166 +328,9 @@ typedef struct AVImageInfo {
 /* AVImageFormat.flags field constants */
 #define AVIMAGE_INTERLEAVED 0x0001 /* image format support interleaved output */
 
-typedef struct AVImageFormat {
-    const char *name;
-    const char *extensions;
-    /* tell if a given file has a chance of being parsing by this format */
-    int (*img_probe)(AVProbeData *);
-    /* read a whole image. 'alloc_cb' is called when the image size is
-       known so that the caller can allocate the image. If 'allo_cb'
-       returns non zero, then the parsing is aborted. Return '0' if
-       OK. */
-    int (*img_read)(ByteIOContext *, 
-                    int (*alloc_cb)(void *, AVImageInfo *info), void *);
-    /* write the image */
-    int supported_pixel_formats; /* mask of supported formats for output */
-    int (*img_write)(ByteIOContext *, AVImageInfo *);
-    int flags;
-    struct AVImageFormat *next;
-} AVImageFormat;
-
-void av_register_image_format(AVImageFormat *img_fmt);
-AVImageFormat *av_probe_image_format(AVProbeData *pd);
-AVImageFormat *guess_image_format(const char *filename);
-int av_read_image(ByteIOContext *pb, const char *filename,
-                  AVImageFormat *fmt,
-                  int (*alloc_cb)(void *, AVImageInfo *info), void *opaque);
-int av_write_image(ByteIOContext *pb, AVImageFormat *fmt, AVImageInfo *img);
-
-extern AVImageFormat *first_image_format;
-
-extern AVImageFormat pnm_image_format;
-extern AVImageFormat pbm_image_format;
-extern AVImageFormat pgm_image_format;
-extern AVImageFormat ppm_image_format;
-extern AVImageFormat pam_image_format;
-extern AVImageFormat pgmyuv_image_format;
-extern AVImageFormat yuv_image_format;
-#ifdef CONFIG_ZLIB
-extern AVImageFormat png_image_format;
-#endif
-extern AVImageFormat jpeg_image_format;
-extern AVImageFormat gif_image_format;
-
-/* XXX: use automatic init with either ELF sections or C file parser */
-/* modules */
-
-/* mpeg.c */
-extern AVInputFormat mpegps_demux;
-int mpegps_init(void);
-
-/* mpegts.c */
-extern AVInputFormat mpegts_demux;
-int mpegts_init(void);
-
-/* rm.c */
-int rm_init(void);
-
-/* crc.c */
-int crc_init(void);
-
-/* img.c */
-int img_init(void);
 
 /* asf.c */
 int asf_init(void);
-
-/* avienc.c */
-int avienc_init(void);
-
-/* avidec.c */
-int avidec_init(void);
-
-/* swf.c */
-int swf_init(void);
-
-/* mov.c */
-int mov_init(void);
-
-/* movenc.c */
-int movenc_init(void);
-
-/* flvenc.c */
-int flvenc_init(void);
-
-/* flvdec.c */
-int flvdec_init(void);
-
-/* jpeg.c */
-int jpeg_init(void);
-
-/* gif.c */
-int gif_init(void);
-
-/* au.c */
-int au_init(void);
-
-/* amr.c */
-int amr_init(void);
-
-/* wav.c */
-int wav_init(void);
-
-/* raw.c */
-int pcm_read_seek(AVFormatContext *s, 
-                  int stream_index, int64_t timestamp);
-int raw_init(void);
-
-/* mp3.c */
-int mp3_init(void);
-
-/* yuv4mpeg.c */
-int yuv4mpeg_init(void);
-
-/* ogg.c */
-int ogg_init(void);
-
-/* dv.c */
-int dv_init(void);
-
-/* ffm.c */
-int ffm_init(void);
-
-/* rtsp.c */
-extern AVInputFormat redir_demux;
-int redir_open(AVFormatContext **ic_ptr, ByteIOContext *f);
-
-/* 4xm.c */
-int fourxm_init(void);
-
-/* psxstr.c */
-int str_init(void);
-
-/* idroq.c */
-int roq_init(void);
-
-/* ipmovie.c */
-int ipmovie_init(void);
-
-/* nut.c */
-int nut_init(void);
-
-/* wc3movie.c */
-int wc3_init(void);
-
-/* westwood.c */
-int westwood_init(void);
-
-/* segafilm.c */
-int film_init(void);
-
-/* idcin.c */
-int idcin_init(void);
-
-/* flic.c */
-int flic_init(void);
-
-/* sierravmd.c */
-int vmd_init(void);
-
-//#include "rtp.h"
-
-//#include "rtsp.h"
 
 /* yuv4mpeg.c */
 extern AVOutputFormat yuv4mpegpipe_oformat;
@@ -560,7 +403,7 @@ int av_write_trailer(AVFormatContext *s);
 
 int parse_image_size(int *width_ptr, int *height_ptr, const char *str);
 int parse_frame_rate(int *frame_rate, int *frame_rate_base, const char *arg);
-int64_t parse_date(const char *datestr, int duration);
+
 
 int64_t av_gettime(void);
 
@@ -570,7 +413,6 @@ offset_t ffm_read_write_index(int fd);
 void ffm_write_write_index(int fd, offset_t pos);
 void ffm_set_write_index(AVFormatContext *s, offset_t pos, offset_t file_size);
 
-int find_info_tag(char *arg, int arg_size, const char *tag1, const char *info);
 
 int get_frame_filename(char *buf, int buf_size,
                        const char *path, int number);
@@ -588,33 +430,11 @@ int dv1394_init(void);
 #include "os_support.h"
 
 int strstart(const char *str, const char *val, const char **ptr);
-int stristart(const char *str, const char *val, const char **ptr);
 void pstrcpy(char *buf, int buf_size, const char *str);
 char *pstrcat(char *buf, int buf_size, const char *s);
 
-void __dynarray_add(unsigned long **tab_ptr, int *nb_ptr, unsigned long elem);
 
-#ifdef __GNUC__
-#define dynarray_add(tab, nb_ptr, elem)\
-do {\
-    typeof(tab) _tab = (tab);\
-    typeof(elem) _elem = (elem);\
-    (void)sizeof(**_tab == _elem); /* check that types are compatible */\
-    __dynarray_add((unsigned long **)_tab, nb_ptr, (unsigned long)_elem);\
-} while(0)
-#else
-#define dynarray_add(tab, nb_ptr, elem)\
-do {\
-    __dynarray_add((unsigned long **)(tab), nb_ptr, (unsigned long)(elem));\
-} while(0)
-#endif
 
-time_t mktimegm(struct tm *tm);
-const char *small_strptime(const char *p, const char *fmt, 
-                           struct tm *dt);
-
-struct in_addr;
-int resolve_host(struct in_addr *sin_addr, const char *hostname);
 
 void url_split(char *proto, int proto_size,
                char *hostname, int hostname_size,

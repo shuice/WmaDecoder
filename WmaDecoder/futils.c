@@ -25,7 +25,6 @@
 
 AVInputFormat *first_iformat;
 AVOutputFormat *first_oformat;
-AVImageFormat *first_image_format;
 
 void av_register_input_format(AVInputFormat *format)
 {
@@ -75,12 +74,6 @@ AVOutputFormat *guess_format(const char *short_name, const char *filename,
     AVOutputFormat *fmt, *fmt_found;
     int score_max, score;
 
-    /* specific test for image sequences */
-    if (!short_name && filename && 
-        filename_number_test(filename) >= 0 &&
-        guess_image_format(filename)) {
-        return guess_format("image", NULL, NULL);
-    }
 
     /* find the proper file type */
     fmt_found = NULL;
@@ -1338,7 +1331,6 @@ static int try_decode_frame(AVStream *st, const uint8_t *data, int size)
     int16_t *samples;
     AVCodec *codec;
     int got_picture, ret;
-    AVFrame picture;
     
     codec = avcodec_find_decoder(st->codec.codec_id);
     if (!codec)
@@ -1348,8 +1340,7 @@ static int try_decode_frame(AVStream *st, const uint8_t *data, int size)
         return ret;
     switch(st->codec.codec_type) {
     case CODEC_TYPE_VIDEO:
-        ret = avcodec_decode_video(&st->codec, &picture, 
-                                   &got_picture, (uint8_t *)data, size);
+            assert(0);
         break;
     case CODEC_TYPE_AUDIO:
         samples = av_malloc(AVCODEC_MAX_AUDIO_FRAME_SIZE);
@@ -1806,156 +1797,6 @@ int parse_frame_rate(int *frame_rate, int *frame_rate_base, const char *arg)
         return 0;
 }
 
-/* Syntax:
- * - If not a duration:
- *  [{YYYY-MM-DD|YYYYMMDD}]{T| }{HH[:MM[:SS[.m...]]][Z]|HH[MM[SS[.m...]]][Z]}
- * Time is localtime unless Z is suffixed to the end. In this case GMT
- * Return the date in micro seconds since 1970 
- * - If duration:
- *  HH[:MM[:SS[.m...]]]
- *  S+[.m...]
- */
-int64_t parse_date(const char *datestr, int duration)
-{
-    const char *p;
-    int64_t t;
-    struct tm dt;
-    int i;
-    static const char *date_fmt[] = {
-        "%Y-%m-%d",
-        "%Y%m%d",
-    };
-    static const char *time_fmt[] = {
-        "%H:%M:%S",
-        "%H%M%S",
-    };
-    const char *q;
-    int is_utc, len;
-    char lastch;
-    time_t now = time(0);
-
-    len = strlen(datestr);
-    if (len > 0)
-        lastch = datestr[len - 1];
-    else
-        lastch = '\0';
-    is_utc = (lastch == 'z' || lastch == 'Z');
-
-    memset(&dt, 0, sizeof(dt));
-
-    p = datestr;
-    q = NULL;
-    if (!duration) {
-        for (i = 0; i < sizeof(date_fmt) / sizeof(date_fmt[0]); i++) {
-            q = small_strptime(p, date_fmt[i], &dt);
-            if (q) {
-                break;
-            }
-        }
-
-        if (!q) {
-            if (is_utc) {
-                dt = *gmtime(&now);
-            } else {
-                dt = *localtime(&now);
-            }
-            dt.tm_hour = dt.tm_min = dt.tm_sec = 0;
-        } else {
-            p = q;
-        }
-
-        if (*p == 'T' || *p == 't' || *p == ' ')
-            p++;
-
-        for (i = 0; i < sizeof(time_fmt) / sizeof(time_fmt[0]); i++) {
-            q = small_strptime(p, time_fmt[i], &dt);
-            if (q) {
-                break;
-            }
-        }
-    } else {
-        q = small_strptime(p, time_fmt[0], &dt);
-        if (!q) {
-            dt.tm_sec = strtol(p, (char **)&q, 10);
-            dt.tm_min = 0;
-            dt.tm_hour = 0;
-        }
-    }
-
-    /* Now we have all the fields that we can get */
-    if (!q) {
-        if (duration)
-            return 0;
-        else
-            return now * int64_t_C(1000000);
-    }
-
-    if (duration) {
-        t = dt.tm_hour * 3600 + dt.tm_min * 60 + dt.tm_sec;
-    } else {
-        dt.tm_isdst = -1;       /* unknown */
-        if (is_utc) {
-            t = mktimegm(&dt);
-        } else {
-            t = mktime(&dt);
-        }
-    }
-
-    t *= 1000000;
-
-    if (*q == '.') {
-        int val, n;
-        q++;
-        for (val = 0, n = 100000; n >= 1; n /= 10, q++) {
-            if (!isdigit(*q)) 
-                break;
-            val += n * (*q - '0');
-        }
-        t += val;
-    }
-    return t;
-}
-
-/* syntax: '?tag1=val1&tag2=val2...'. Little URL decoding is done. Return
-   1 if found */
-int find_info_tag(char *arg, int arg_size, const char *tag1, const char *info)
-{
-    const char *p;
-    char tag[128], *q;
-
-    p = info;
-    if (*p == '?')
-        p++;
-    for(;;) {
-        q = tag;
-        while (*p != '\0' && *p != '=' && *p != '&') {
-            if ((q - tag) < sizeof(tag) - 1)
-                *q++ = *p;
-            p++;
-        }
-        *q = '\0';
-        q = arg;
-        if (*p == '=') {
-            p++;
-            while (*p != '&' && *p != '\0') {
-                if ((q - arg) < arg_size - 1) {
-                    if (*p == '+')
-                        *q++ = ' ';
-                    else
-                        *q++ = *p;
-                }
-                p++;
-            }
-            *q = '\0';
-        }
-        if (!strcmp(tag, tag1)) 
-            return 1;
-        if (*p != '&')
-            break;
-        p++;
-    }
-    return 0;
-}
 
 /* Return in 'buf' the path with '%d' replaced by number. Also handles
    the '%0nd' format where 'n' is the total number of digits and
@@ -2198,88 +2039,3 @@ void av_frac_add(AVFrac *f, int64_t incr)
     }
     f->num = num;
 }
-
-/**
- * register a new image format
- * @param img_fmt Image format descriptor
- */
-void av_register_image_format(AVImageFormat *img_fmt)
-{
-    AVImageFormat **p;
-
-    p = &first_image_format;
-    while (*p != NULL) p = &(*p)->next;
-    *p = img_fmt;
-    img_fmt->next = NULL;
-}
-
-/* guess image format */
-AVImageFormat *av_probe_image_format(AVProbeData *pd)
-{
-    AVImageFormat *fmt1, *fmt;
-    int score, score_max;
-
-    fmt = NULL;
-    score_max = 0;
-    for(fmt1 = first_image_format; fmt1 != NULL; fmt1 = fmt1->next) {
-        if (fmt1->img_probe) {
-            score = fmt1->img_probe(pd);
-            if (score > score_max) {
-                score_max = score;
-                fmt = fmt1;
-            }
-        }
-    }
-    return fmt;
-}
-
-AVImageFormat *guess_image_format(const char *filename)
-{
-    AVImageFormat *fmt1;
-
-    for(fmt1 = first_image_format; fmt1 != NULL; fmt1 = fmt1->next) {
-        if (fmt1->extensions && match_ext(filename, fmt1->extensions))
-            return fmt1;
-    }
-    return NULL;
-}
-
-/**
- * Read an image from a stream. 
- * @param pb byte stream containing the image
- * @param fmt image format, NULL if probing is required
- */
-int av_read_image(ByteIOContext *pb, const char *filename,
-                  AVImageFormat *fmt,
-                  int (*alloc_cb)(void *, AVImageInfo *info), void *opaque)
-{
-    char buf[PROBE_BUF_SIZE];
-    AVProbeData probe_data, *pd = &probe_data;
-    offset_t pos;
-    int ret;
-
-    if (!fmt) {
-        pd->filename = filename;
-        pd->buf = buf;
-        pos = url_ftell(pb);
-        pd->buf_size = get_buffer(pb, buf, PROBE_BUF_SIZE);
-        url_fseek(pb, pos, SEEK_SET);
-        fmt = av_probe_image_format(pd);
-    }
-    if (!fmt)
-        return AVERROR_NOFMT;
-    ret = fmt->img_read(pb, alloc_cb, opaque);
-    return ret;
-}
-
-/**
- * Write an image to a stream.
- * @param pb byte stream for the image output
- * @param fmt image format
- * @param img image data and informations
- */
-int av_write_image(ByteIOContext *pb, AVImageFormat *fmt, AVImageInfo *img)
-{
-    return fmt->img_write(pb, img);
-}
-

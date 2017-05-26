@@ -91,51 +91,7 @@ typedef struct InternalBuffer{
     int linesize[4];
 }InternalBuffer;
 #define INTERNAL_BUFFER_SIZE 32
-#define ALIGN(x, a) (((x)+(a)-1)&~((a)-1))
-void avcodec_align_dimensions(AVCodecContext *s, int *width, int *height){
-    int w_align= 1;    
-    int h_align= 1;    
-    
-    switch(s->pix_fmt){
-    case PIX_FMT_YUV420P:
-    case PIX_FMT_YUV422:
-    case PIX_FMT_YUV422P:
-    case PIX_FMT_YUV444P:
-    case PIX_FMT_GRAY8:
-    case PIX_FMT_YUVJ420P:
-    case PIX_FMT_YUVJ422P:
-    case PIX_FMT_YUVJ444P:
-        w_align= 16; //FIXME check for non mpeg style codecs and use less alignment
-        h_align= 16;
-        break;
-    case PIX_FMT_YUV411P:
-        w_align=32;
-        h_align=8;
-        break;
-    case PIX_FMT_YUV410P:
-        if(s->codec_id == CODEC_ID_SVQ1){
-            w_align=64;
-            h_align=64;
-        }
-    case PIX_FMT_RGB555:
-        if(s->codec_id == CODEC_ID_RPZA){
-            w_align=4;
-            h_align=4;
-        }
-    case PIX_FMT_PAL8:
-        if(s->codec_id == CODEC_ID_SMC){
-            w_align=4;
-            h_align=4;
-        }
-        break;
-    default:
-        w_align= 1;
-        h_align= 1;
-        break;
-    }
-    *width = ALIGN(*width , w_align);
-    *height= ALIGN(*height, h_align);
-}
+
 
 
 void avcodec_default_release_buffer(AVCodecContext *s, AVFrame *pic){
@@ -276,52 +232,6 @@ int avcodec_open(AVCodecContext *avctx, AVCodec *codec)
     }
     return 0;
 }
-int avcodec_encode_audio(AVCodecContext *avctx, uint8_t *buf, int buf_size, 
-                         const short *samples)
-{
-    if((avctx->codec->capabilities & CODEC_CAP_DELAY) || samples){
-        int ret = avctx->codec->encode(avctx, buf, buf_size, (void *)samples);
-        avctx->frame_number++;
-        return ret;
-    }else
-        return 0;
-}
-int avcodec_encode_video(AVCodecContext *avctx, uint8_t *buf, int buf_size, 
-                         const AVFrame *pict)
-{
-    if((avctx->codec->capabilities & CODEC_CAP_DELAY) || pict){
-        int ret = avctx->codec->encode(avctx, buf, buf_size, (void *)pict);
-        avctx->frame_number++;
-        emms_c(); //needed to avoid a emms_c() call before every return;
-    
-        return ret;
-    }else
-        return 0;
-}
-/** 
- * decode a frame. 
- * @param buf bitstream buffer, must be FF_INPUT_BUFFER_PADDING_SIZE larger then the actual read bytes
- * because some optimized bitstream readers read 32 or 64 bit at once and could read over the end
- * @param buf_size the size of the buffer in bytes
- * @param got_picture_ptr zero if no frame could be decompressed, Otherwise, it is non zero
- * @return -1 if error, otherwise return the number of
- * bytes used. 
- */
-int avcodec_decode_video(AVCodecContext *avctx, AVFrame *picture, 
-                         int *got_picture_ptr,
-                         uint8_t *buf, int buf_size)
-{
-    int ret;
-    
-    *got_picture_ptr= 0;
-    ret = avctx->codec->decode(avctx, picture, got_picture_ptr, 
-                               buf, buf_size);
-    emms_c(); //needed to avoid a emms_c() call before every return;
-    
-    if (*got_picture_ptr)                           
-        avctx->frame_number++;
-    return ret;
-}
 /* decode an audio frame. return -1 if error, otherwise return the
    *number of bytes used. If no frame could be decompressed,
    *frame_size_ptr is zero. Otherwise, it is the decompressed frame
@@ -422,9 +332,11 @@ static void avcodec_default_free_buffers(AVCodecContext *s){
     int i, j;
     if(s->internal_buffer==NULL) return;
     
-    for(i=0; i<INTERNAL_BUFFER_SIZE; i++){
+    for(i=0; i<INTERNAL_BUFFER_SIZE; i++)
+    {
         InternalBuffer *buf= &((InternalBuffer*)s->internal_buffer)[i];
-        for(j=0; j<4; j++){
+        for(j=0; j<4; j++)
+        {
             av_freep(&buf->base[j]);
             buf->data[j]= NULL;
         }
@@ -435,27 +347,6 @@ static void avcodec_default_free_buffers(AVCodecContext *s){
 }
 
 
-//int64_t av_rescale(int64_t a, int64_t b, int64_t c){
-//    AVInteger ai, ci;
-//    assert(c > 0);
-//    assert(b >=0);
-//    
-//    if(a<0) return -av_rescale(-a, b, c);
-//    
-//    if(b<=INT_MAX && c<=INT_MAX){
-//        if(a<=INT_MAX)
-//            return (a * b + c/2)/c;
-//        else
-//            return a/c*b + (a%c*b + c/2)/c;
-//    }
-//    
-//    ai= av_mul_i(av_int2i(a), av_int2i(b));
-//    ci= av_int2i(c);
-//    ai= av_add_i(ai, av_shr_i(ci,1));
-//    
-//    return av_i2int(av_div_i(ai, ci));
-//}
-/* av_log API */
 static int av_log_level = AV_LOG_DEBUG;
 static void av_log_default_callback(void* ptr, int level, const char* fmt, va_list vl)
 {

@@ -27,8 +27,6 @@
  
 #include "avcodec.h"
 #include "dsputil.h"
-#include "simple_idct.h"
-//#include "faandct.h"
 
 uint8_t cropTbl[256 + 2 * MAX_NEG_CROP];
 uint32_t squareTbl[512];

@@ -1717,147 +1717,10 @@ typedef struct AVPaletteControl {
 
 } AVPaletteControl;
 
-extern AVCodec ac3_encoder;
-extern AVCodec mp2_encoder;
-extern AVCodec mp3lame_encoder;
-extern AVCodec oggvorbis_encoder;
-extern AVCodec faac_encoder;
-extern AVCodec mpeg1video_encoder;
-extern AVCodec mpeg2video_encoder;
-extern AVCodec h263_encoder;
-extern AVCodec h263p_encoder;
-extern AVCodec flv_encoder;
-extern AVCodec rv10_encoder;
-extern AVCodec rv20_encoder;
-extern AVCodec dvvideo_encoder;
-extern AVCodec mjpeg_encoder;
-extern AVCodec ljpeg_encoder;
-extern AVCodec mpeg4_encoder;
-extern AVCodec msmpeg4v1_encoder;
-extern AVCodec msmpeg4v2_encoder;
-extern AVCodec msmpeg4v3_encoder;
-extern AVCodec wmv1_encoder;
-extern AVCodec wmv2_encoder;
-extern AVCodec huffyuv_encoder;
-extern AVCodec h264_encoder;
-extern AVCodec asv1_encoder;
-extern AVCodec asv2_encoder;
-extern AVCodec vcr1_encoder;
-extern AVCodec ffv1_encoder;
-extern AVCodec mdec_encoder;
-extern AVCodec zlib_encoder;
-extern AVCodec svq1_encoder;
 
-extern AVCodec h263_decoder;
-extern AVCodec h261_decoder;
-extern AVCodec mpeg4_decoder;
-extern AVCodec msmpeg4v1_decoder;
-extern AVCodec msmpeg4v2_decoder;
-extern AVCodec msmpeg4v3_decoder;
-extern AVCodec wmv1_decoder;
-extern AVCodec wmv2_decoder;
-extern AVCodec mpeg1video_decoder;
-extern AVCodec mpeg2video_decoder;
-extern AVCodec mpegvideo_decoder;
-extern AVCodec mpeg_xvmc_decoder;
-extern AVCodec h263i_decoder;
-extern AVCodec flv_decoder;
-extern AVCodec rv10_decoder;
-extern AVCodec rv20_decoder;
-extern AVCodec svq1_decoder;
-extern AVCodec svq3_decoder;
-extern AVCodec dvvideo_decoder;
 extern AVCodec wmav1_decoder;
 extern AVCodec wmav2_decoder;
-extern AVCodec mjpeg_decoder;
-extern AVCodec mjpegb_decoder;
-extern AVCodec sp5x_decoder;
-extern AVCodec mp2_decoder;
-extern AVCodec mp3_decoder;
-extern AVCodec mace3_decoder;
-extern AVCodec mace6_decoder;
-extern AVCodec huffyuv_decoder;
-extern AVCodec oggvorbis_decoder;
-extern AVCodec cyuv_decoder;
-extern AVCodec h264_decoder;
-extern AVCodec indeo3_decoder;
-extern AVCodec vp3_decoder;
-extern AVCodec theora_decoder;
-extern AVCodec amr_nb_decoder;
-extern AVCodec amr_nb_encoder;
-extern AVCodec amr_wb_encoder;
-extern AVCodec amr_wb_decoder;
-extern AVCodec aac_decoder;
-extern AVCodec mpeg4aac_decoder;
-extern AVCodec asv1_decoder;
-extern AVCodec asv2_decoder;
-extern AVCodec vcr1_decoder;
-extern AVCodec cljr_decoder;
-extern AVCodec ffv1_decoder;
-extern AVCodec fourxm_decoder;
-extern AVCodec mdec_decoder;
-extern AVCodec roq_decoder;
-extern AVCodec interplay_video_decoder;
-extern AVCodec xan_wc3_decoder;
-extern AVCodec rpza_decoder;
-extern AVCodec cinepak_decoder;
-extern AVCodec msrle_decoder;
-extern AVCodec msvideo1_decoder;
-extern AVCodec vqa_decoder;
-extern AVCodec idcin_decoder;
-extern AVCodec eightbps_decoder;
-extern AVCodec smc_decoder;
-extern AVCodec flic_decoder;
-extern AVCodec vmdvideo_decoder;
-extern AVCodec vmdaudio_decoder;
-extern AVCodec truemotion1_decoder;
-extern AVCodec mszh_decoder;
-extern AVCodec zlib_decoder;
-extern AVCodec ra_144_decoder;
-extern AVCodec ra_288_decoder;
-extern AVCodec roq_dpcm_decoder;
-extern AVCodec interplay_dpcm_decoder;
-extern AVCodec xan_dpcm_decoder;
-extern AVCodec qtrle_decoder;
-extern AVCodec flac_decoder;
 
-/* pcm codecs */
-#define PCM_CODEC(id, name) \
-extern AVCodec name ## _decoder; \
-extern AVCodec name ## _encoder
-
-PCM_CODEC(CODEC_ID_PCM_S16LE, pcm_s16le);
-PCM_CODEC(CODEC_ID_PCM_S16BE, pcm_s16be);
-PCM_CODEC(CODEC_ID_PCM_U16LE, pcm_u16le);
-PCM_CODEC(CODEC_ID_PCM_U16BE, pcm_u16be);
-PCM_CODEC(CODEC_ID_PCM_S8, pcm_s8);
-PCM_CODEC(CODEC_ID_PCM_U8, pcm_u8);
-PCM_CODEC(CODEC_ID_PCM_ALAW, pcm_alaw);
-PCM_CODEC(CODEC_ID_PCM_MULAW, pcm_mulaw);
-
-/* adpcm codecs */
-
-PCM_CODEC(CODEC_ID_ADPCM_IMA_QT, adpcm_ima_qt);
-PCM_CODEC(CODEC_ID_ADPCM_IMA_WAV, adpcm_ima_wav);
-PCM_CODEC(CODEC_ID_ADPCM_IMA_DK3, adpcm_ima_dk3);
-PCM_CODEC(CODEC_ID_ADPCM_IMA_DK4, adpcm_ima_dk4);
-PCM_CODEC(CODEC_ID_ADPCM_IMA_WS, adpcm_ima_ws);
-PCM_CODEC(CODEC_ID_ADPCM_SMJPEG, adpcm_ima_smjpeg);
-PCM_CODEC(CODEC_ID_ADPCM_MS, adpcm_ms);
-PCM_CODEC(CODEC_ID_ADPCM_4XM, adpcm_4xm);
-PCM_CODEC(CODEC_ID_ADPCM_XA, adpcm_xa);
-PCM_CODEC(CODEC_ID_ADPCM_ADX, adpcm_adx);
-PCM_CODEC(CODEC_ID_ADPCM_EA, adpcm_ea);
-PCM_CODEC(CODEC_ID_ADPCM_G726, adpcm_g726);
-
-#undef PCM_CODEC
-
-/* dummy raw video codec */
-extern AVCodec rawvideo_encoder;
-extern AVCodec rawvideo_decoder;
-
-/* the following codecs use external GPL libs */
-extern AVCodec ac3_decoder;
 
 /* resample.c */
 
@@ -1876,76 +1739,6 @@ int av_resample(struct AVResampleContext *c, short *dst, short *src, int *consum
 void av_resample_compensate(struct AVResampleContext *c, int sample_delta, int compensation_distance);
 void av_resample_close(struct AVResampleContext *c);
 
-/* YUV420 format is assumed ! */
-
-struct ImgReSampleContext;
-
-typedef struct ImgReSampleContext ImgReSampleContext;
-
-ImgReSampleContext *img_resample_init(int output_width, int output_height,
-                                      int input_width, int input_height);
-
-ImgReSampleContext *img_resample_full_init(int owidth, int oheight,
-                                      int iwidth, int iheight,
-                                      int topBand, int bottomBand,
-                                      int leftBand, int rightBand,
-                                      int padtop, int padbottom,
-                                      int padleft, int padright);
-
-
-void img_resample(ImgReSampleContext *s, 
-                  AVPicture *output, const AVPicture *input);
-
-void img_resample_close(ImgReSampleContext *s);
-
-/**
- * Allocate memory for a picture.  Call avpicture_free to free it.
- *
- * @param picture the picture to be filled in.
- * @param pix_fmt the format of the picture.
- * @param width the width of the picture.
- * @param height the height of the picture.
- * @return 0 if successful, -1 if not.
- */
-int avpicture_alloc(AVPicture *picture, int pix_fmt, int width, int height);
-
-/* Free a picture previously allocated by avpicture_alloc. */
-void avpicture_free(AVPicture *picture);
-
-int avpicture_fill(AVPicture *picture, uint8_t *ptr,
-                   int pix_fmt, int width, int height);
-int avpicture_layout(const AVPicture* src, int pix_fmt, int width, int height,
-                     unsigned char *dest, int dest_size);
-int avpicture_get_size(int pix_fmt, int width, int height);
-void avcodec_get_chroma_sub_sample(int pix_fmt, int *h_shift, int *v_shift);
-const char *avcodec_get_pix_fmt_name(int pix_fmt);
-enum PixelFormat avcodec_get_pix_fmt(const char* name);
-
-#define FF_LOSS_RESOLUTION  0x0001 /* loss due to resolution change */
-#define FF_LOSS_DEPTH       0x0002 /* loss due to color depth change */
-#define FF_LOSS_COLORSPACE  0x0004 /* loss due to color space conversion */
-#define FF_LOSS_ALPHA       0x0008 /* loss of alpha bits */
-#define FF_LOSS_COLORQUANT  0x0010 /* loss due to color quantization */
-#define FF_LOSS_CHROMA      0x0020 /* loss of chroma (e.g. rgb to gray conversion) */
-
-int avcodec_get_pix_fmt_loss(int dst_pix_fmt, int src_pix_fmt,
-                             int has_alpha);
-int avcodec_find_best_pix_fmt(int pix_fmt_mask, int src_pix_fmt,
-                              int has_alpha, int *loss_ptr);
-
-#define FF_ALPHA_TRANSP       0x0001 /* image has some totally transparent pixels */
-#define FF_ALPHA_SEMI_TRANSP  0x0002 /* image has some transparent pixels */
-int img_get_alpha_info(const AVPicture *src,
-		       int pix_fmt, int width, int height);
-
-/* convert among pixel formats */
-int img_convert(AVPicture *dst, int dst_pix_fmt,
-                const AVPicture *src, int pix_fmt, 
-                int width, int height);
-
-/* deinterlace a picture */
-int avpicture_deinterlace(AVPicture *dst, const AVPicture *src,
-                          int pix_fmt, int width, int height);
 
 /* external high level API */
 
@@ -1972,13 +1765,8 @@ int avcodec_default_get_buffer(AVCodecContext *s, AVFrame *pic);
 void avcodec_default_release_buffer(AVCodecContext *s, AVFrame *pic);
 int avcodec_default_reget_buffer(AVCodecContext *s, AVFrame *pic);
 void avcodec_align_dimensions(AVCodecContext *s, int *width, int *height);
-enum PixelFormat avcodec_default_get_format(struct AVCodecContext *s, const enum PixelFormat * fmt);
 
-int avcodec_thread_init(AVCodecContext *s, int thread_count);
-void avcodec_thread_free(AVCodecContext *s);
-int avcodec_thread_execute(AVCodecContext *s, int (*func)(AVCodecContext *c2, void *arg2),void **arg, int *ret, int count);
-int avcodec_default_execute(AVCodecContext *c, int (*func)(AVCodecContext *c2, void *arg2),void **arg, int *ret, int count);
-//FIXME func typedef
+
 
 /**
  * opens / inits the AVCodecContext.
@@ -1989,16 +1777,11 @@ int avcodec_open(AVCodecContext *avctx, AVCodec *codec);
 int avcodec_decode_audio(AVCodecContext *avctx, int16_t *samples, 
                          int *frame_size_ptr,
                          uint8_t *buf, int buf_size);
-int avcodec_decode_video(AVCodecContext *avctx, AVFrame *picture, 
-                         int *got_picture_ptr,
-                         uint8_t *buf, int buf_size);
-int avcodec_parse_frame(AVCodecContext *avctx, uint8_t **pdata, 
+int avcodec_parse_frame(AVCodecContext *avctx, uint8_t **pdata,
                         int *data_size_ptr,
                         uint8_t *buf, int buf_size);
 int avcodec_encode_audio(AVCodecContext *avctx, uint8_t *buf, int buf_size, 
                          const short *samples);
-int avcodec_encode_video(AVCodecContext *avctx, uint8_t *buf, int buf_size, 
-                         const AVFrame *pict);
 
 int avcodec_close(AVCodecContext *avctx);
 
@@ -2143,13 +1926,6 @@ int av_parser_parse(AVCodecParserContext *s,
                     int64_t pts, int64_t dts);
 void av_parser_close(AVCodecParserContext *s);
 
-extern AVCodecParser mpegvideo_parser;
-extern AVCodecParser mpeg4video_parser;
-extern AVCodecParser h261_parser;
-extern AVCodecParser h263_parser;
-extern AVCodecParser h264_parser;
-extern AVCodecParser mpegaudio_parser;
-extern AVCodecParser ac3_parser;
 
 /* memory */
 void *av_malloc(unsigned int size);
