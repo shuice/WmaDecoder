@@ -1,15 +1,7 @@
 
 
-#include "common.h"
-#include "dsputil.h"
-#include "avcodec.h"
-#include <stdlib.h>
-#include <stdio.h>
 
-#include "avformat.h"
-
-#undef NDEBUG
-#include <assert.h>
+#include "Wma_Decoder.h"
 
 using namespace WMADecoder;
 

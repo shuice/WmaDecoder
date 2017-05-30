@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		990EE1CB1ED7127200F1FB23 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1CA1ED7127200F1FB23 /* main.cpp */; };
 		990EE1D51ED7183200F1FB23 /* input.wma in CopyFiles */ = {isa = PBXBuildFile; fileRef = 990EE1D21ED717D400F1FB23 /* input.wma */; };
-		990EE1E31ED7193E00F1FB23 /* allcodecs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1761ED710F500F1FB23 /* allcodecs.cpp */; };
-		990EE1E41ED7193E00F1FB23 /* allformats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1771ED710F500F1FB23 /* allformats.cpp */; };
-		990EE1E51ED7193E00F1FB23 /* asf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1781ED710F500F1FB23 /* asf.cpp */; };
-		990EE1E71ED7193E00F1FB23 /* avio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE17E1ED710F500F1FB23 /* avio.cpp */; };
-		990EE1E81ED7193E00F1FB23 /* aviobuf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1801ED710F500F1FB23 /* aviobuf.cpp */; };
-		990EE1E91ED7193E00F1FB23 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1821ED710F500F1FB23 /* common.cpp */; };
-		990EE1EA1ED7193E00F1FB23 /* cutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1851ED710F500F1FB23 /* cutils.cpp */; };
-		990EE1ED1ED7193E00F1FB23 /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1891ED710F500F1FB23 /* fft.cpp */; };
-		990EE1EE1ED7193E00F1FB23 /* file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18A1ED710F500F1FB23 /* file.cpp */; };
-		990EE1EF1ED7193E00F1FB23 /* futils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18B1ED710F500F1FB23 /* futils.cpp */; };
-		990EE1F21ED7193E00F1FB23 /* mdct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18E1ED710F500F1FB23 /* mdct.cpp */; };
-		990EE1F31ED7193E00F1FB23 /* mem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18F1ED710F500F1FB23 /* mem.cpp */; };
-		990EE1F81ED7193E00F1FB23 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1981ED710F500F1FB23 /* utils.cpp */; };
-		990EE1FA1ED7193E00F1FB23 /* wmadec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE19C1ED710F500F1FB23 /* wmadec.cpp */; };
+		990EE1E31ED7193E00F1FB23 /* Wma_allcodecs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1761ED710F500F1FB23 /* Wma_allcodecs.cpp */; };
+		990EE1E41ED7193E00F1FB23 /* Wma_allformats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1771ED710F500F1FB23 /* Wma_allformats.cpp */; };
+		990EE1E51ED7193E00F1FB23 /* Wma_asf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1781ED710F500F1FB23 /* Wma_asf.cpp */; };
+		990EE1E71ED7193E00F1FB23 /* Wma_avio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE17E1ED710F500F1FB23 /* Wma_avio.cpp */; };
+		990EE1E81ED7193E00F1FB23 /* Wma_aviobuf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1801ED710F500F1FB23 /* Wma_aviobuf.cpp */; };
+		990EE1E91ED7193E00F1FB23 /* Wma_common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1821ED710F500F1FB23 /* Wma_common.cpp */; };
+		990EE1EA1ED7193E00F1FB23 /* Wma_cutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1851ED710F500F1FB23 /* Wma_cutils.cpp */; };
+		990EE1ED1ED7193E00F1FB23 /* Wma_fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1891ED710F500F1FB23 /* Wma_fft.cpp */; };
+		990EE1EE1ED7193E00F1FB23 /* Wma_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18A1ED710F500F1FB23 /* Wma_file.cpp */; };
+		990EE1EF1ED7193E00F1FB23 /* Wma_futils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18B1ED710F500F1FB23 /* Wma_futils.cpp */; };
+		990EE1F21ED7193E00F1FB23 /* Wma_mdct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18E1ED710F500F1FB23 /* Wma_mdct.cpp */; };
+		990EE1F31ED7193E00F1FB23 /* Wma_mem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE18F1ED710F500F1FB23 /* Wma_mem.cpp */; };
+		990EE1F81ED7193E00F1FB23 /* Wma_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1981ED710F500F1FB23 /* Wma_utils.cpp */; };
+		990EE1FA1ED7193E00F1FB23 /* Wma_wmadec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE19C1ED710F500F1FB23 /* Wma_wmadec.cpp */; };
 		990EE1FD1ED7196000F1FB23 /* libWmaDecoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 990EE1DA1ED7190E00F1FB23 /* libWmaDecoder.a */; };
-		990EE2001ED7243D00F1FB23 /* dsputil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1FE1ED7243D00F1FB23 /* dsputil.cpp */; };
-		990EE2021ED7275D00F1FB23 /* parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE2011ED7275D00F1FB23 /* parser.cpp */; };
+		990EE2001ED7243D00F1FB23 /* Wma_dsputil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE1FE1ED7243D00F1FB23 /* Wma_dsputil.cpp */; };
+		990EE2021ED7275D00F1FB23 /* Wma_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 990EE2011ED7275D00F1FB23 /* Wma_parser.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,37 +61,37 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		990EE1761ED710F500F1FB23 /* allcodecs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; name = allcodecs.cpp; path = WmaDecoder/allcodecs.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		990EE1771ED710F500F1FB23 /* allformats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = allformats.cpp; path = WmaDecoder/allformats.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		990EE1781ED710F500F1FB23 /* asf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = asf.cpp; path = WmaDecoder/asf.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		990EE17B1ED710F500F1FB23 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = avcodec.h; path = WmaDecoder/avcodec.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		990EE17C1ED710F500F1FB23 /* avformat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = avformat.h; path = WmaDecoder/avformat.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		990EE17D1ED710F500F1FB23 /* avi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = avi.h; path = WmaDecoder/avi.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		990EE17E1ED710F500F1FB23 /* avio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = avio.cpp; path = WmaDecoder/avio.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		990EE17F1ED710F500F1FB23 /* avio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = avio.h; path = WmaDecoder/avio.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		990EE1801ED710F500F1FB23 /* aviobuf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = aviobuf.cpp; path = WmaDecoder/aviobuf.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		990EE1811ED710F500F1FB23 /* bswap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 2; name = bswap.h; path = WmaDecoder/bswap.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		990EE1821ED710F500F1FB23 /* common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = common.cpp; path = WmaDecoder/common.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		990EE1831ED710F500F1FB23 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = common.h; path = WmaDecoder/common.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		990EE1851ED710F500F1FB23 /* cutils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = cutils.cpp; path = WmaDecoder/cutils.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
-		990EE1891ED710F500F1FB23 /* fft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = fft.cpp; path = WmaDecoder/fft.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
-		990EE18A1ED710F500F1FB23 /* file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = file.cpp; path = WmaDecoder/file.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		990EE18B1ED710F500F1FB23 /* futils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = futils.cpp; path = WmaDecoder/futils.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
-		990EE18E1ED710F500F1FB23 /* mdct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = mdct.cpp; path = WmaDecoder/mdct.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		990EE18F1ED710F500F1FB23 /* mem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = mem.cpp; path = WmaDecoder/mem.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		990EE1921ED710F500F1FB23 /* os_support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = os_support.h; path = WmaDecoder/os_support.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		990EE1941ED710F500F1FB23 /* rational.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = rational.h; path = WmaDecoder/rational.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		990EE1981ED710F500F1FB23 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; name = utils.cpp; path = WmaDecoder/utils.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
-		990EE19B1ED710F500F1FB23 /* wmadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = wmadata.h; path = WmaDecoder/wmadata.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		990EE19C1ED710F500F1FB23 /* wmadec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = wmadec.cpp; path = WmaDecoder/wmadec.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE1761ED710F500F1FB23 /* Wma_allcodecs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; name = Wma_allcodecs.cpp; path = WmaDecoder/Wma_allcodecs.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE1771ED710F500F1FB23 /* Wma_allformats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_allformats.cpp; path = WmaDecoder/Wma_allformats.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE1781ED710F500F1FB23 /* Wma_asf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_asf.cpp; path = WmaDecoder/Wma_asf.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE17B1ED710F500F1FB23 /* Wma_avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Wma_avcodec.h; path = WmaDecoder/Wma_avcodec.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		990EE17C1ED710F500F1FB23 /* Wma_avformat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Wma_avformat.h; path = WmaDecoder/Wma_avformat.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		990EE17D1ED710F500F1FB23 /* Wma_avi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Wma_avi.h; path = WmaDecoder/Wma_avi.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		990EE17E1ED710F500F1FB23 /* Wma_avio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_avio.cpp; path = WmaDecoder/Wma_avio.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE17F1ED710F500F1FB23 /* Wma_avio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Wma_avio.h; path = WmaDecoder/Wma_avio.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		990EE1801ED710F500F1FB23 /* Wma_aviobuf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_aviobuf.cpp; path = WmaDecoder/Wma_aviobuf.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE1811ED710F500F1FB23 /* Wma_bswap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 2; name = Wma_bswap.h; path = WmaDecoder/Wma_bswap.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		990EE1821ED710F500F1FB23 /* Wma_common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_common.cpp; path = WmaDecoder/Wma_common.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE1831ED710F500F1FB23 /* Wma_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Wma_common.h; path = WmaDecoder/Wma_common.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		990EE1851ED710F500F1FB23 /* Wma_cutils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_cutils.cpp; path = WmaDecoder/Wma_cutils.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		990EE1891ED710F500F1FB23 /* Wma_fft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_fft.cpp; path = WmaDecoder/Wma_fft.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		990EE18A1ED710F500F1FB23 /* Wma_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_file.cpp; path = WmaDecoder/Wma_file.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE18B1ED710F500F1FB23 /* Wma_futils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_futils.cpp; path = WmaDecoder/Wma_futils.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		990EE18E1ED710F500F1FB23 /* Wma_mdct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_mdct.cpp; path = WmaDecoder/Wma_mdct.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE18F1ED710F500F1FB23 /* Wma_mem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_mem.cpp; path = WmaDecoder/Wma_mem.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE1921ED710F500F1FB23 /* Wma_os_support.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Wma_os_support.h; path = WmaDecoder/Wma_os_support.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		990EE1941ED710F500F1FB23 /* Wma_rational.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Wma_rational.h; path = WmaDecoder/Wma_rational.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		990EE1981ED710F500F1FB23 /* Wma_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; name = Wma_utils.cpp; path = WmaDecoder/Wma_utils.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		990EE19B1ED710F500F1FB23 /* Wma_wmadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Wma_wmadata.h; path = WmaDecoder/Wma_wmadata.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		990EE19C1ED710F500F1FB23 /* Wma_wmadec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_wmadec.cpp; path = WmaDecoder/Wma_wmadec.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		990EE1C81ED7127200F1FB23 /* WmaDecoderTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WmaDecoderTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		990EE1CA1ED7127200F1FB23 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = main.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		990EE1D21ED717D400F1FB23 /* input.wma */ = {isa = PBXFileReference; lastKnownFileType = file; path = input.wma; sourceTree = "<group>"; };
 		990EE1DA1ED7190E00F1FB23 /* libWmaDecoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWmaDecoder.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		990EE1FE1ED7243D00F1FB23 /* dsputil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = dsputil.cpp; path = WmaDecoder/dsputil.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
-		990EE1FF1ED7243D00F1FB23 /* dsputil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = dsputil.h; path = WmaDecoder/dsputil.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		990EE2011ED7275D00F1FB23 /* parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; name = parser.cpp; path = WmaDecoder/parser.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		990EE2061ED850BC00F1FB23 /* namespace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = namespace.h; path = WmaDecoder/namespace.h; sourceTree = SOURCE_ROOT; };
+		990EE1FE1ED7243D00F1FB23 /* Wma_dsputil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; name = Wma_dsputil.cpp; path = WmaDecoder/Wma_dsputil.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		990EE1FF1ED7243D00F1FB23 /* Wma_dsputil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = Wma_dsputil.h; path = WmaDecoder/Wma_dsputil.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		990EE2011ED7275D00F1FB23 /* Wma_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 2; name = Wma_parser.cpp; path = WmaDecoder/Wma_parser.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		990EE2061ED850BC00F1FB23 /* Wma_Decoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Wma_Decoder.h; path = WmaDecoder/Wma_Decoder.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,33 +134,33 @@
 		990EE11B1ED6DB4B00F1FB23 /* WmaDecoder */ = {
 			isa = PBXGroup;
 			children = (
-				990EE2061ED850BC00F1FB23 /* namespace.h */,
-				990EE1761ED710F500F1FB23 /* allcodecs.cpp */,
-				990EE1771ED710F500F1FB23 /* allformats.cpp */,
-				990EE1781ED710F500F1FB23 /* asf.cpp */,
-				990EE17B1ED710F500F1FB23 /* avcodec.h */,
-				990EE17C1ED710F500F1FB23 /* avformat.h */,
-				990EE17D1ED710F500F1FB23 /* avi.h */,
-				990EE17E1ED710F500F1FB23 /* avio.cpp */,
-				990EE17F1ED710F500F1FB23 /* avio.h */,
-				990EE1801ED710F500F1FB23 /* aviobuf.cpp */,
-				990EE1811ED710F500F1FB23 /* bswap.h */,
-				990EE1821ED710F500F1FB23 /* common.cpp */,
-				990EE1831ED710F500F1FB23 /* common.h */,
-				990EE1851ED710F500F1FB23 /* cutils.cpp */,
-				990EE1891ED710F500F1FB23 /* fft.cpp */,
-				990EE1FE1ED7243D00F1FB23 /* dsputil.cpp */,
-				990EE1FF1ED7243D00F1FB23 /* dsputil.h */,
-				990EE18A1ED710F500F1FB23 /* file.cpp */,
-				990EE18B1ED710F500F1FB23 /* futils.cpp */,
-				990EE2011ED7275D00F1FB23 /* parser.cpp */,
-				990EE18E1ED710F500F1FB23 /* mdct.cpp */,
-				990EE18F1ED710F500F1FB23 /* mem.cpp */,
-				990EE1921ED710F500F1FB23 /* os_support.h */,
-				990EE1941ED710F500F1FB23 /* rational.h */,
-				990EE1981ED710F500F1FB23 /* utils.cpp */,
-				990EE19B1ED710F500F1FB23 /* wmadata.h */,
-				990EE19C1ED710F500F1FB23 /* wmadec.cpp */,
+				990EE2061ED850BC00F1FB23 /* Wma_Decoder.h */,
+				990EE1761ED710F500F1FB23 /* Wma_allcodecs.cpp */,
+				990EE1771ED710F500F1FB23 /* Wma_allformats.cpp */,
+				990EE1781ED710F500F1FB23 /* Wma_asf.cpp */,
+				990EE17B1ED710F500F1FB23 /* Wma_avcodec.h */,
+				990EE17C1ED710F500F1FB23 /* Wma_avformat.h */,
+				990EE17D1ED710F500F1FB23 /* Wma_avi.h */,
+				990EE17E1ED710F500F1FB23 /* Wma_avio.cpp */,
+				990EE17F1ED710F500F1FB23 /* Wma_avio.h */,
+				990EE1801ED710F500F1FB23 /* Wma_aviobuf.cpp */,
+				990EE1811ED710F500F1FB23 /* Wma_bswap.h */,
+				990EE1821ED710F500F1FB23 /* Wma_common.cpp */,
+				990EE1831ED710F500F1FB23 /* Wma_common.h */,
+				990EE1851ED710F500F1FB23 /* Wma_cutils.cpp */,
+				990EE1891ED710F500F1FB23 /* Wma_fft.cpp */,
+				990EE1FE1ED7243D00F1FB23 /* Wma_dsputil.cpp */,
+				990EE1FF1ED7243D00F1FB23 /* Wma_dsputil.h */,
+				990EE18A1ED710F500F1FB23 /* Wma_file.cpp */,
+				990EE18B1ED710F500F1FB23 /* Wma_futils.cpp */,
+				990EE2011ED7275D00F1FB23 /* Wma_parser.cpp */,
+				990EE18E1ED710F500F1FB23 /* Wma_mdct.cpp */,
+				990EE18F1ED710F500F1FB23 /* Wma_mem.cpp */,
+				990EE1921ED710F500F1FB23 /* Wma_os_support.h */,
+				990EE1941ED710F500F1FB23 /* Wma_rational.h */,
+				990EE1981ED710F500F1FB23 /* Wma_utils.cpp */,
+				990EE19B1ED710F500F1FB23 /* Wma_wmadata.h */,
+				990EE19C1ED710F500F1FB23 /* Wma_wmadec.cpp */,
 			);
 			name = WmaDecoder;
 			path = wmadecoder2/wma_decoder;
@@ -265,22 +265,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				990EE1E31ED7193E00F1FB23 /* allcodecs.cpp in Sources */,
-				990EE1E41ED7193E00F1FB23 /* allformats.cpp in Sources */,
-				990EE1E51ED7193E00F1FB23 /* asf.cpp in Sources */,
-				990EE1E71ED7193E00F1FB23 /* avio.cpp in Sources */,
-				990EE1E81ED7193E00F1FB23 /* aviobuf.cpp in Sources */,
-				990EE1E91ED7193E00F1FB23 /* common.cpp in Sources */,
-				990EE1EA1ED7193E00F1FB23 /* cutils.cpp in Sources */,
-				990EE2021ED7275D00F1FB23 /* parser.cpp in Sources */,
-				990EE1ED1ED7193E00F1FB23 /* fft.cpp in Sources */,
-				990EE1EE1ED7193E00F1FB23 /* file.cpp in Sources */,
-				990EE1EF1ED7193E00F1FB23 /* futils.cpp in Sources */,
-				990EE1F21ED7193E00F1FB23 /* mdct.cpp in Sources */,
-				990EE1F31ED7193E00F1FB23 /* mem.cpp in Sources */,
-				990EE1F81ED7193E00F1FB23 /* utils.cpp in Sources */,
-				990EE1FA1ED7193E00F1FB23 /* wmadec.cpp in Sources */,
-				990EE2001ED7243D00F1FB23 /* dsputil.cpp in Sources */,
+				990EE1E31ED7193E00F1FB23 /* Wma_allcodecs.cpp in Sources */,
+				990EE1E41ED7193E00F1FB23 /* Wma_allformats.cpp in Sources */,
+				990EE1E51ED7193E00F1FB23 /* Wma_asf.cpp in Sources */,
+				990EE1E71ED7193E00F1FB23 /* Wma_avio.cpp in Sources */,
+				990EE1E81ED7193E00F1FB23 /* Wma_aviobuf.cpp in Sources */,
+				990EE1E91ED7193E00F1FB23 /* Wma_common.cpp in Sources */,
+				990EE1EA1ED7193E00F1FB23 /* Wma_cutils.cpp in Sources */,
+				990EE2021ED7275D00F1FB23 /* Wma_parser.cpp in Sources */,
+				990EE1ED1ED7193E00F1FB23 /* Wma_fft.cpp in Sources */,
+				990EE1EE1ED7193E00F1FB23 /* Wma_file.cpp in Sources */,
+				990EE1EF1ED7193E00F1FB23 /* Wma_futils.cpp in Sources */,
+				990EE1F21ED7193E00F1FB23 /* Wma_mdct.cpp in Sources */,
+				990EE1F31ED7193E00F1FB23 /* Wma_mem.cpp in Sources */,
+				990EE1F81ED7193E00F1FB23 /* Wma_utils.cpp in Sources */,
+				990EE1FA1ED7193E00F1FB23 /* Wma_wmadec.cpp in Sources */,
+				990EE2001ED7243D00F1FB23 /* Wma_dsputil.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
